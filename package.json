@@ -1,0 +1,23 @@
+{
+  "name": "pagetransition-highwaygsap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@dogstudio/highway": "^2.2.1",
+    "@glidejs/glide": "^3.4.1",
+    "gsap": "^3.6.1",
+    "highway": "0.0.5",
+    "lottie-web": "^5.7.7",
+    "p5": "^1.3.1"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "sass": "^1.32.8"
+  }
+}
