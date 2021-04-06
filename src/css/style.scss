@@ -19,8 +19,129 @@ body{margin:0;padding: 0;font-family: 'Oswald', sans-serif;overflow-x:hidden;bac
 #canvasBackground{position: fixed;top:0;left:0;min-height: 100vh;width:100%;z-index: -1;}
 header input{display: none;}
 header input + label{position: absolute;z-index: 5;top:10px;right:10px;}
+/*  icon */
+
+
 /* Icon 2 */
-#nav-icon2 { width: 60px; height: 45px;position: relative;-webkit-transform: rotate(0deg);  -moz-transform: rotate(0deg);-o-transform: rotate(0deg); transform: rotate(0deg); -webkit-transition: .5s ease-in-out;-moz-transition: .5s ease-in-out; -o-transition: .5s ease-in-out; transition: .5s ease-in-out;cursor: pointer;}
+#nav-icon2{width: 60px; height: 45px;position: relative;-webkit-transition: .5s ease-in-out;-moz-transition: .5s ease-in-out; -o-transition: .5s ease-in-out; transition: .5s ease-in-out;cursor: pointer;}
+#nav-icon2 span{display: block; position: absolute; height: 5px;  opacity: 1; border-radius: 9px; transform-origin:0 0; -webkit-transition: .25s ease-in-out;-moz-transition: .25s ease-in-out;-o-transition: .25s ease-in-out;transition: .25s ease-in-out;}
+#nav-icon2 span:nth-child(1){background-color: var(--first-color);width:100%;}
+#nav-icon2 span:nth-child(2){background-color: var(--second-color);top: 18px;left: 0;width:45%;z-index: 10;}
+#nav-icon2 span:nth-child(3){background-color: var(--first-color);top: 18px;left: 55%;width:45%;}
+#nav-icon2 span:nth-child(4){background-color: var(--third-color);top: 36px;left: 0;width:25%;}
+#nav-icon2 span:nth-child(5){background-color: var(--first-color);top: 36px;left: 35%;width:65%;}
+#nav-icon2 #containerSpan6 span{background-color: var(--first-color);top: 18px;left: 7px;width: 50%;transform-origin: 100% 0;-webkit-transform: scale(0,1);-moz-transform: scale(0,1);-o-transform: scale(0,1);transform: scale(0,1); }
+#nav-icon2 #containerSpan7 span{background-color: var(--first-color);top: 2px;left: -20px;width: 50%;transform-origin: 100% 0;-webkit-transform: scale(0,1);-moz-transform: scale(0,1);-o-transform: scale(0,1);transform: scale(0,1);}
+#nav-icon2 #containerSpan8 span{background-color: var(--second-color);top: -8px;left: 17px;width: 50%;transform-origin: 100% 0;-webkit-transform: scale(0,1);-moz-transform: scale(0,1);-o-transform: scale(0,1);transform: scale(0,1);}
+#nav-icon2 #containerSpan9 span{background-color: var(--third-color);top: 18px;left: 45px;width: 40%;transform-origin: 0 0;-webkit-transform: scale(0,1);-moz-transform: scale(0,1);-o-transform: scale(0,1);transform: scale(0,1);}
+
+
+#nav-icon2.open span:nth-child(1){-webkit-transform: scale(0,1);-moz-transform: scale(0,1);-o-transform: scale(0,1);transform: scale(0,1); -webkit-animation:openMenu1 0.5s ;-moz-animation:openMenu1 0.5s ;-ms-animation:openMenu1 0.5s ;animation:openMenu1 0.5s;}
+#nav-icon2.open span:nth-child(2){-webkit-transform: scale(0,1); -moz-transform: scale(0,1); -o-transform: scale(0,1); transform: scale(0,1);-webkit-animation:openMenu2 .5s cubic-bezier(.86,0,.07,1);-moz-animation:openMenu2 .5s cubic-bezier(.86,0,.07,1); -ms-animation:openMenu2 .5s cubic-bezier(.86,0,.07,1);animation:openMenu2 .5s cubic-bezier(.86,0,.07,1);}
+#nav-icon2.open span:nth-child(3){width:0;-webkit-transform: scale(0,1); -moz-transform: scale(0,1); -o-transform: scale(0,1); transform: scale(0,1);-webkit-animation:openMenu3 .5s cubic-bezier(.86,0,.07,1); -moz-animation:openMenu3 .5s cubic-bezier(.86,0,.07,1); -ms-animation:openMenu3 .5s cubic-bezier(.86,0,.07,1); animation:openMenu3 .5s cubic-bezier(.86,0,.07,1);}
+#nav-icon2.open span:nth-child(4){ -webkit-transform: scale(0,1); -moz-transform: scale(0,1); -o-transform: scale(0,1); transform: scale(0,1);  -webkit-animation:openMenu4 1s; -moz-animation:openMenu4 1s; -ms-animation:openMenu4 1s;animation:openMenu4 1s;}
+#nav-icon2.open span:nth-child(5){-webkit-transform: scale(0,1);-moz-transform: scale(0,1);-o-transform: scale(0,1);transform: scale(0,1); -webkit-animation:openMenu5 1s ;-moz-animation:openMenu5 1s ;-ms-animation:openMenu5 1s ;animation:openMenu5 1s;}
+#nav-icon2.open #containerSpan6 span{ -webkit-transform: scale(1,1); -moz-transform: scale(1,1);  -o-transform: scale(1,1); transform: scale(1,1); -webkit-animation:openMenu6 1s cubic-bezier(.86,0,.07,1); -moz-animation:openMenu6 1s cubic-bezier(.86,0,.07,1); -ms-animation:openMenu6 1s cubic-bezier(.86,0,.07,1); animation:openMenu6 1s cubic-bezier(.86,0,.07,1);}
+#nav-icon2.open #containerSpan7 span{ -webkit-transform: scale(1,1);-moz-transform: scale(1,1); -o-transform: scale(1,1); transform: scale(1,1); -webkit-animation:openMenu7 1s cubic-bezier(.86,0,.07,1); -moz-animation:openMenu7 1s cubic-bezier(.86,0,.07,1);  -ms-animation:openMenu7 1s cubic-bezier(.86,0,.07,1); animation:openMenu7 1s cubic-bezier(.86,0,.07,1);}
+#nav-icon2.open #containerSpan8 span{transform-origin: 0 0;width:40%;-webkit-transform: scale(1,1);-moz-transform: scale(1,1);-o-transform: scale(1,1);transform: scale(1,1);-webkit-animation:openMenu8 1s cubic-bezier(.86,0,.07,1); -moz-animation:openMenu8 1s cubic-bezier(.86,0,.07,1);-ms-animation:openMenu8 1s cubic-bezier(.86,0,.07,1); animation:openMenu8 1s cubic-bezier(.86,0,.07,1);}
+#nav-icon2.open #containerSpan9 span{-webkit-transform: scale(1,1);-moz-transform: scale(1,1);-o-transform: scale(1,1);transform: scale(1,1); -webkit-animation:openMenu9 1s cubic-bezier(.86,0,.07,1); -moz-animation:openMenu9 1s cubic-bezier(.86,0,.07,1); -ms-animation:openMenu9 1s cubic-bezier(.86,0,.07,1); animation:openMenu9 1s cubic-bezier(.86,0,.07,1);}
+
+
+
+#nav-icon2.load span:nth-child(1){-webkit-animation:loadMenu1 0.5s;-moz-animation:loadMenu1 0.5s;-ms-animation:loadMenu1 0.5s;animation:loadMenu1 0.5s;}
+#nav-icon2.load span:nth-child(2){-webkit-animation:loadMenu2 1.5s;-moz-animation:loadMenu2 1.5s;-ms-animation:loadMenu2 1.5s;animation:loadMenu2 1.5s;}
+#nav-icon2.load span:nth-child(3),#nav-icon2.close span:nth-child(3){-webkit-animation:loadMenu3 1s;-moz-animation:loadMenu3 1s;-ms-animation:loadMenu3 1s;animation:loadMenu3 1s;}
+#nav-icon2.load span:nth-child(4),#nav-icon2.close span:nth-child(4){-webkit-animation:loadMenu4 2s;-moz-animation:loadMenu4 1s;-ms-animation:loadMenu4 2s;animation:loadMenu4 2s;}
+#nav-icon2.load span:nth-child(5),#nav-icon2.close span:nth-child(5){-webkit-animation:loadMenu5 1.5s;-moz-animation:loadMenu5 1.5s;-ms-animation:loadMenu5 1.5s;animation:loadMenu5 1.5s;}
+
+
+
+
+#nav-icon2.close span:nth-child(2){-webkit-animation:loadMenu2 1.5s;-moz-animation:loadMenu2 1.5s;-ms-animation:loadMenu2 1.5s;animation:loadMenu2 1.5s;}
+#nav-icon2.close #containerSpan6 span{-webkit-transform: scale(0,1);-moz-transform: scale(0,1);-o-transform: scale(0,1);transform: scale(0,1);-webkit-animation:closeMenu6 0.25s cubic-bezier(.86,0,.07,1);-moz-animation:closeMenu6 0.25s cubic-bezier(.86,0,.07,1);-ms-animation:closeMenu6 0.25s cubic-bezier(.86,0,.07,1);animation:closeMenu6 0.25s cubic-bezier(.86,0,.07,1);}
+#nav-icon2.close #containerSpan7 span{-webkit-transform: scale(0,1);-moz-transform: scale(0,1);-o-transform: scale(0,1);transform: scale(0,1); -webkit-animation:closeMenu7 0.5s cubic-bezier(.86,0,.07,1);-moz-animation:closeMenu7 0.5s cubic-bezier(.86,0,.07,1); -ms-animation:closeMenu7 0.5s cubic-bezier(.86,0,.07,1);animation:closeMenu7 0.5s cubic-bezier(.86,0,.07,1);}
+#nav-icon2.close #containerSpan9 span{-webkit-transform: scale(0,1);-moz-transform: scale(0,1);-o-transform: scale(0,1);transform: scale(0,1); 
+  -webkit-animation:closeMenu9 0.5s cubic-bezier(.86,0,.07,1);-moz-animation:closeMenu9 0.5s cubic-bezier(.86,0,.07,1); -ms-animation:closeMenu9 0.5s cubic-bezier(.86,0,.07,1);animation:closeMenu9 0.5s cubic-bezier(.86,0,.07,1);}
+
+
+@keyframes openMenu2{ 0%{transform-origin:100% 0;transform: scale(1, 1);} 80%{transform-origin:100% 0;transform: scale(0, 1) translate(-15px, 0);}}
+@keyframes openMenu8{0%,10%{transform-origin:100% 0;transform: scale(0,1);width:55%;}50%{transform-origin:100% 0;transform: scale(1,1);}100%{ transform: scale(1,1);width:40%;}}
+@keyframes openMenu9{0%,50%{transform: scale(0,1);}100%{transform: scale(1,1);}}
+
+
+@-webkit-keyframes openMenu1{from{transform-origin: 100% 0;transform: scale(1,1);}to{transform-origin: 100% 0;transform: scale(0,1);}}
+@-moz-keyframes openMenu1{from{transform-origin: 100% 0;transform: scale(1,1);}to{transform-origin: 100% 0;transform: scale(0,1);}}
+@-ms-keyframes openMenu1{from{transform-origin: 100% 0;transform: scale(1,1);}to{transform-origin: 100% 0;transform: scale(0,1);}}
+@-o-keyframes openMenu1{from{transform-origin: 100% 0;transform: scale(1,1);}to{transform-origin: 100% 0;transform: scale(0,1);}}
+@keyframes openMenu1{from{transform-origin: 100% 0;transform: scale(1,1);}to{transform-origin: 100% 0;transform: scale(0,1);}}
+
+@-webkit-keyframes openMenu3{ 0%{transform: translate(0, 0);}10%{transform: translate(-15px, 0);}100%{transform: translate(-15px, 0) scale(0,1);;}}
+@-moz-keyframes openMenu3{ 0%{transform: translate(0, 0);}10%{transform: translate(-15px, 0);}100%{transform: translate(-15px, 0) scale(0,1);;}}
+@-ms-keyframes openMenu3{ 0%{transform: translate(0, 0);}10%{transform: translate(-15px, 0);}100%{transform: translate(-15px, 0) scale(0,1);}}
+@-o-keyframes openMenu3{ 0%{transform: translate(0, 0);}10%{transform: translate(-15px, 0);}100%{transform: translate(-15px, 0) scale(0,1);}}
+@keyframes openMenu3{ 0%{transform: translate(0, 0);}10%{transform: translate(-15px, 0);}100%{transform: translate(-15px, 0) scale(0,1);}}
+
+
+@-webkit-keyframes openMenu4{from{transform: scale(1,1);}to{transform: scale(0,1);}}
+@-moz-keyframes openMenu4{from{transform: scale(1,1);}to{transform: scale(0,1);}}
+@-ms-keyframes openMenu4{from{transform: scale(1,1);}to{transform: scale(0,1);}}
+@-o-keyframes openMenu4{from{transform: scale(1,1);}to{transform: scale(0,1);}}
+@keyframes openMenu4{from{transform: scale(1,1);}to{transform: scale(0,1);}}
+
+@-webkit-keyframes openMenu5{from{transform-origin: 100% 0;transform: scale(1,1);}to{transform-origin: 100% 0;transform: scale(0,1);}}
+@-moz-keyframes openMenu5{from{transform-origin: 100% 0;transform: scale(1,1);}to{transform-origin: 100% 0;transform: scale(0,1);}}
+@-ms-keyframes openMenu5{from{transform-origin: 100% 0;transform: scale(1,1);}to{transform-origin: 100% 0;transform: scale(0,1);}}
+@-o-keyframes openMenu5{from{transform-origin: 100% 0;transform: scale(1,1);}to{transform-origin: 100% 0;transform: scale(0,1);}}
+@keyframes openMenu5{from{transform-origin: 100% 0;transform: scale(1,1);}to{transform-origin: 100% 0;transform: scale(0,1);}}
+
+@-webkit-keyframes openMenu6{0%,10%{transform-origin:100% 0;transform: scale(0,1);}20%{transform-origin:100% 0;transform: scale(1,1);}35%{transform-origin:0 0;}50%{transform-origin:0 0; transform: scale(0.7,1);}100%{transform-origin:0 0; transform: scale(1,1);}}
+@-moz-keyframes openMenu6{0%,10%{transform-origin:100% 0;transform: scale(0,1);}20%{transform-origin:100% 0;transform: scale(1,1);}35%{transform-origin:0 0;}50%{transform-origin:0 0; transform: scale(0.7,1);}100%{transform-origin:0 0; transform: scale(1,1);}}
+@-ms-keyframes openMenu6{0%,10%{transform-origin:100% 0;transform: scale(0,1);}20%{transform-origin:100% 0;transform: scale(1,1);}35%{transform-origin:0 0;}50%{transform-origin:0 0; transform: scale(0.7,1);}100%{transform-origin:0 0; transform: scale(1,1);}}
+@-o-keyframes openMenu6{0%,10%{transform-origin:100% 0;transform: scale(0,1);}20%{transform-origin:100% 0;transform: scale(1,1);}35%{transform-origin:0 0;}50%{transform-origin:0 0; transform: scale(0.7,1);}100%{transform-origin:0 0; transform: scale(1,1);}}
+@keyframes openMenu6{0%,10%{transform-origin:100% 0;transform: scale(0,1);}20%{transform-origin:100% 0;transform: scale(1,1);}35%{transform-origin:0 0;}50%{transform-origin:0 0; transform: scale(0.7,1);}100%{transform-origin:0 0; transform: scale(1,1);}}
+
+@-webkit-keyframes openMenu7{0%,70%{transform: scale(0,1);}100%{transform: scale(1,1);}}
+@-moz-keyframes openMenu7{0%,70%{transform: scale(0,1);}100%{transform: scale(1,1);}}
+@-ms-keyframes openMenu7{0%,70%{transform: scale(0,1);}100%{transform: scale(1,1);}}
+@-o-keyframes openMenu7{0%,70%{transform: scale(0,1);}100%{transform: scale(1,1);}}
+@keyframes openMenu7{0%,70%{transform: scale(0,1);}100%{transform: scale(1,1);}}
+
+@-webkit-keyframes loadMenu1{from{width:0;}to{width:100%;}}
+@-moz-keyframes loadMenu1{from{width:0;}to{width:100%;}}
+@-ms-keyframes loadMenu1{from{width:0;}to{width:100%;}}
+@-o-keyframes loadMenu1{from{width:0;}to{width:100%;}}
+@keyframes loadMenu1{from{width:0;}to{width:100%;}}
+
+@-webkit-keyframes loadMenu2{0%,50%{width:0;}100%{width:45%;}}
+@-moz-keyframes loadMenu2{0%,50%{width:0;}100%{width:45%}}
+@-ms-keyframes loadMenu2{0%,50%{width:0;}100%{width:45%}}
+@-o-keyframes loadMenu2{0%,50%{width:0;}100%{width:45%}}
+@keyframes loadMenu2{0%,50%{width:0;}100%{width:45%}}
+
+@-webkit-keyframes loadMenu3{0%,25%{left:0;width:0;}50%{left:0;width:100%;}51%,70%{left:0;width:100%;}71%,99%{left:unset;right:0;}100%{left:unset;right:0;width:45%;}}
+@-moz-keyframes loadMenu3{0%,25%{left:0;width:0;}50%{left:0;width:100%;}51%,70%{left:0;width:100%;}71%,99%{left:unset;right:0;}100%{left:unset;right:0;width:45%;}}
+@-ms-keyframes loadMenu3{0%,25%{left:0;width:0;}50%{left:0;width:100%;}51%,70%{left:0;width:100%;}71%,99%{left:unset;right:0;}100%{left:unset;right:0;width:45%;}}
+@-o-keyframes loadMenu3{0%,25%{left:0;width:0;}50%{left:0;width:100%;}51%,70%{left:0;width:100%;}71%,99%{left:unset;right:0;}100%{left:unset;right:0;width:45%;}}
+@keyframes loadMenu3{0%,25%{left:0;width:0;}50%{left:0;width:100%;}51%,70%{left:0;width:100%;}71%,99%{left:unset;right:0;}100%{left:unset;right:0;width:45%;}}
+
+@-webkit-keyframes loadMenu4{0%,50%{width:0;}100%{width:25%;}}
+@-moz-keyframes loadMenu4{0%,50%{width:0;}100%{width:25%}}
+@-ms-keyframes loadMenu4{0%,50%{width:0;}100%{width:25%}}
+@-o-keyframes loadMenu4{0%,50%{width:0;}100%{width:25%}}
+@keyframes loadMenu4{0%,50%{width:0;}100%{width:25%}}
+
+@-webkit-keyframes loadMenu5{0%,45%{left:0;width:0;}60%{left:0;width:100%;}61%,70%{left:0;width:100%;}71%,99%{left:unset;right:0;}100%{left:unset;right:0;width:65%;}}
+@-moz-keyframes loadMenu5{0%,45%{left:0;width:0;}60%{left:0;width:100%;}61%,70%{left:0;width:100%;}71%,99%{left:unset;right:0;}100%{left:unset;right:0;width:65%;}}
+@-ms-keyframes loadMenu5{0%,45%{left:0;width:0;}60%{left:0;width:100%;}61%,70%{left:0;width:100%;}71%,99%{left:unset;right:0;}100%{left:unset;right:0;width:65%;}}
+@-o-keyframes loadMenu5{0%,45%{left:0;width:0;}60%{left:0;width:100%;}61%,70%{left:0;width:100%;}71%,99%{left:unset;right:0;}100%{left:unset;right:0;width:65%;}}
+@keyframes loadMenu5{0%,45%{left:0;width:0;}60%{left:0;width:100%;}61%,70%{left:0;width:100%;}71%,99%{left:unset;right:0;}100%{left:unset;right:0;width:65%;}}
+
+
+@keyframes closeMenu6{0%{transform: scale(1,1);}100%{transform: scale(0,1);}}
+@keyframes closeMenu7{0%,10%{transform-origin: 0 0;transform: scale(1,1);}100%{transform-origin: 0 0;transform: scale(0,1);}}
+@keyframes closeMenu9{0%,10%{transform-origin: 100% 0;transform: scale(1,1);}100%{transform-origin: 100% 0;transform: scale(0,1);}}
+
+
 /*#nav-icon2 span{display: block;position: absolute; height: 5px; width: 50%;background-color: var(--first-color); opacity: 1; -webkit-transform: rotate(0deg);-moz-transform: rotate(0deg); -o-transform: rotate(0deg);transform: rotate(0deg);-webkit-transition: .25s ease-in-out;-moz-transition: .25s ease-in-out;-o-transition: .25s ease-in-out;transition: .25s ease-in-out;}
 #nav-icon2 span:nth-child(even){left: 50%;border-radius: 0 9px 9px 0;}
 #nav-icon2 span:nth-child(odd){left:0px; border-radius: 9px 0 0 9px;}
@@ -42,6 +163,8 @@ header input + label{position: absolute;z-index: 5;top:10px;right:10px;}
 #nav-icon2.open span:nth-child(5) {left: 5px; top: 29px;}
 #nav-icon2.open span:nth-child(6) {left: calc(50% - 4px); top: 29px;}*/
 
+#nav-icon2 svg{display: none;}
+/*
 #nav-icon2 svg:nth-child(1){opacity: 0;display: none;}
 #nav-icon2 svg:nth-child(2){opacity: 0;display: none;}
 #nav-icon2 svg:nth-child(3){opacity: 1;display: block;}
@@ -52,7 +175,7 @@ header input + label{position: absolute;z-index: 5;top:10px;right:10px;}
 
 #nav-icon2.open svg:nth-child(1){opacity: 0;display: none;}
 #nav-icon2.open svg:nth-child(2){opacity: 1;display: block;}
-#nav-icon2.open svg:nth-child(3){opacity: 0;display: none;}
+#nav-icon2.open svg:nth-child(3){opacity: 0;display: none;}*/
 
 nav{
   display: grid;align-items: center;
@@ -109,6 +232,11 @@ footer p {margin:0;}
 
 
 /*  ANIMATIONS  */
+
+
+
+
+
 
 @-webkit-keyframes openMenu{from{opacity:0;}to{opacity:1;}}
 @-moz-keyframes openMenu{from{opacity:0;}to{opacity:1;}}
