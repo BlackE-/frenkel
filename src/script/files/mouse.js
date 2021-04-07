@@ -7,8 +7,7 @@ class Mouse{
     }
 
     addEvents() {
-        // const mouseMove = throttle(this.update.bind(this), 100,this);
-        const mouseMove = this.update.bind(this);
+        const mouseMove = this.throttle(this.update.bind(this), 100,this);
         document.addEventListener('mousemove', mouseMove, false);
         document.addEventListener('touchmove', mouseMove, false);
     }
@@ -25,8 +24,38 @@ class Mouse{
 
     update(e) {
         if (e.touches) e = e.touches[0];
-        this.pos.set(e.clientX * pxRatio, e.clientY * pxRatio);
-        // this.pos.set(e.clientX, e.clientY);
+        // this.pos.set(e.clientX * pxRatio, e.clientY * pxRatio);
+        this.pos.set(e.clientX, e.clientY);
+    }
+
+    /**
+     * in case of a "storm of events", this executes once every $threshold
+     * @param fn
+     * @param threshhold
+     * @param scope
+     * @returns {Function}
+     */
+    throttle(fn, threshhold, scope) {
+        threshhold || (threshhold = 250);
+        var last,
+            deferTimer;
+        return function () {
+            var context = scope || this;
+
+            var now = +new Date,
+                args = arguments;
+            if (last && now < last + threshhold) {
+                // hold on to it
+                clearTimeout(deferTimer);
+                deferTimer = setTimeout(function () {
+                    last = now;
+                    fn.apply(context, args);
+                }, threshhold);
+            } else {
+                last = now;
+                fn.apply(context, args);
+            }
+        };
     }
 
 }

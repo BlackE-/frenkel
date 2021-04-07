@@ -3,21 +3,25 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>SERVICES</title>
+	<title>Beneficios</title>
 	<link rel="stylesheet" type="text/css" href="src/css/style.scss">
 </head>
 <body>
+	<div id="canvasBackground"><canvas id="paintonme"></canvas></div>
 	<div id="maximusContainer">
 		<div id="scrollContainer">
-			<div id="canvasBackground"></div>
 			<main id="main" data-router-wrapper>
-				<section class="firstSection" data-router-view="services">
-					<div class="sectionFirst" id="firstSectionServices">
+				<section class="sectionView" data-router-view="about">
+					<div class="sectionFirst" id="firstSectionAbout">
 						<div class="container">
-							<h1>SERVICES</h1>
+							<h1>¿Qué beneficios le interesa conseguir?</h1>
+							<select id="beneficiosSelecct">
+								<option value="0">Maximizar el potencial de mi planta</option>
+								<option value="1">Opcion 2</option>
+							</select>
 						</div>
 					</div>
-				</section>
+				</section> 
 			</main>
 		</div>
 	</div>
