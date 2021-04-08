@@ -23,7 +23,6 @@ const H = new Highway.Core({
 	}
 });
 
-
 H.on('NAVIGATE_OUT',({from, trigger,location}) =>{//listen to the navigate OUT
 	_menu.closeMenu();
 	checkLinkTransitions(location.href);
