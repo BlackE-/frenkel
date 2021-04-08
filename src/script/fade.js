@@ -7,6 +7,9 @@ import Highway from '@dogstudio/highway';
 class Fade extends Highway.Transition{
 	//index -> about
 	in( { from, to, done }){
+		// Reset Scroll
+		window.scrollTo(0, 0);
+
 		//about PAGE GOING IN
 		//remove the old content
 		from.remove();
@@ -14,8 +17,6 @@ class Fade extends Highway.Transition{
 		//animation
 		gsap.fromTo( to , 0.5, {opacity:0} , {opacity:1, onComplete:done});
 
-		// Reset Scroll
-		window.scrollTo(0, 0);
 	}
 
 	out( { from, done } ){

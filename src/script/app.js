@@ -1,11 +1,18 @@
+import Menu from './menu.js';
 import Highway from '@dogstudio/highway';
 import Fade from './fade.js';
 import Overlap from './overlap.js';
-import SmoothScroll from './scroll.js';
+// import SmoothScroll from './scroll.js';
 import Drawing from './drawing.js';
+import Animations from './animations.js';
 
 const _draw = new Drawing('paintonme');
+const _animations = new Animations();
+const _menu = new Menu('menuHamburguer','nav-icon2','nav','navUl');
+const linksMenu = document.querySelectorAll('nav a');
+const maximusContainer = document.getElementById('maximusContainer');
 
+gsap.registerPlugin(ScrollTrigger);
 /*			highway 			*/
 const H = new Highway.Core({
 	transitions:{
@@ -16,76 +23,68 @@ const H = new Highway.Core({
 	}
 });
 
-const linksMenu = document.querySelectorAll('nav a');
-const maximusContainer = document.getElementById('maximusContainer');
-//listen to the navigate OUT
-H.on('NAVIGATE_OUT',({from, trigger,location}) =>{
-	closeMenu();
-	let link = location.href.split('/');
-	switch(link[link.length-1]){
-		case "servicios.html":
-			_draw.setBackground('rgb(211, 117, 34)');
-			maximusContainer.classList = '';
-			maximusContainer.classList.add('orange');
-		break;
-		case "beneficios.html":
-			_draw.setBackground('rgb(44, 116, 184)');
-			maximusContainer.classList = '';
-			maximusContainer.classList.add('blue');
-		break;
-		default:
-			_draw.setBackground('rgb(233, 233, 233)');
-			maximusContainer.classList = '';
-	}
+
+H.on('NAVIGATE_OUT',({from, trigger,location}) =>{//listen to the navigate OUT
+	_menu.closeMenu();
+	checkLinkTransitions(location.href);
 });
-//listen to the navegate IN
-H.on( 'NAVIGATE_IN', ({ to, location }) => {
+H.on( 'NAVIGATE_IN', ({ to, location }) => {//listen to the navegate IN
 	linksMenu.forEach(link => {
 		link.classList.remove('active');
 		if(link.href == location.href ){link.classList.add('active');}
 	});
+	checkLinkAnimations(location.href);	
 });
-H.on('NAVIGATE_END',({to, location}) =>{
-	// console.log(to);
+H.on('NAVIGATE_END',({to, location}) =>{// console.log(to);
 });
 
+const checkLinkAnimations = (link) =>{
+	let l = link.split('/');
+	switch(l[l.length-1]){
+		case "servicios.html":
+			setOrange();
+			_animations.servicios();
+		break;
+		case "beneficios.html":
+			setBlue();
+			_animations.beneficios();
+		break;
+		default:
+			setWhite();
+			_animations.index();
+	}
+	_animations.footer();
+}
+
+const checkLinkTransitions = (link) =>{
+	maximusContainer.classList = '';
+
+	let l = link.split('/');
+	switch(l[l.length-1]){
+		case "servicios.html":setOrange();break;
+		case "beneficios.html":setBlue();break;
+		default:setWhite();
+	}
+}
+
+const setOrange = () => {
+	_draw.setBackground('rgb(211, 117, 34)');
+	maximusContainer.classList.add('orange');
+}
+const setBlue = () =>{
+	_draw.setBackground('rgb(44, 116, 184)');
+	maximusContainer.classList.add('blue');
+}
+const setWhite = () =>{_draw.setBackground('rgb(233, 233, 233)');}
 
 
 /*			scroll mobile 			*/
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-if (!isMobile) {
-	const _scroll = new SmoothScroll('scrollContainer','main');
-}else{
-	maximusContainer.classList.add('mobile');
-	document.getElementById('scrollContainer').classList.add('mobile');
-}
-
-//HEADER
-console.log('%cBy @Studio-SUB', 'font-size: 14px;color: #000; border:1px solid #000;');
-const menuHamburguer = document.getElementById('menuHamburguer');
-const hamburgerIcon = document.getElementById('nav-icon2');
-const menuNav = document.getElementById('nav');
-const menuNavUl = document.getElementById('navUl');
-
-let openMenu = () =>{
-	hamburgerIcon.classList.remove('close');hamburgerIcon.classList.add('open');
-	menuNav.classList.remove('close');menuNav.classList.add('open');
-	menuNavUl.classList.add('open');
-}
-let closeMenu = () =>{
-	menuNavUl.classList.remove('open');
-	hamburgerIcon.classList.remove('open');hamburgerIcon.classList.add('close');
-	menuNav.classList.remove('open');menuNav.classList.add('close');
-}
-menuHamburguer.addEventListener("change",()=>{
-	(menuHamburguer.checked) ? openMenu() : closeMenu() ;
-});
-
-setTimeout(()=>{hamburgerIcon.classList.remove('load');},1500);
+// const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+// if (!isMobile) {
+	// const _scroll = new SmoothScroll('scrollContainer','main');
+	// maximusContainer.classList.add('scroll');
+	// document.getElementById('scrollContainer').classList.add('scroll');
+// }
 
 
-let tlFooter = gsap.timeline({scrollTrigger: {trigger: ".footer"}});
-tlFooter.addLabel("start-footer")
-  .from(".footerText", {opacity: 0,scale:1.2})
-  .to(".footerText", {opacity: 1,scale:1, duration: 0.5})
-  .addLabel("end-footer");
+checkLinkAnimations(window.location.href);

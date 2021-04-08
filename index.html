@@ -4,9 +4,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0">
 	<title>Frenkel Home</title>
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet"> 
-	<link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
 	<link rel="preload" as="style" href="src/css/style.scss">
 	<link rel="stylesheet" type="text/css" href="src/css/style.scss">
 </head>
@@ -15,6 +12,9 @@
 	<div id="maximusContainer">
 		<div id="scrollContainer">
 			<header>
+				<div class="logoHeaderContainer">
+					<a class="logoHeader" href="index.html"><img src="src/assets/frenkel-logo-blanco.svg" loading="lazy" alt="Frenkel-logo"/></a>
+				</div>
 				<input type="checkbox" name="menu" id="menuHamburguer">
 				<label for="menuHamburguer">
 					<div class="hamburguer load" id="nav-icon2">
@@ -60,6 +60,58 @@
 						<div class="container">
 							<p class="titlesectionCarousel">Nuestros expertos son líderes mundiales en sus ramos</p>
 						</div>
+						<!-- <div id="content">
+							<div id="planes">
+							    <div class="plane-wrapper">
+							      <span class="plane-title">Bahamas</span>
+							      <div class="plane">
+							        <img src="https://source.unsplash.com/2fFd7SIVpz8/1280x720" alt="Photo by Gregory Culmer on Unsplash" crossorigin />
+							      </div>
+							    </div>
+
+							    <div class="plane-wrapper">
+							      <span class="plane-title">Philippines</span>
+							      <div class="plane">
+							        <img src="https://source.unsplash.com/SDaJRmZYMDA/1280x720" alt="Photo by James Connolly on Unsplash" crossorigin />
+							      </div>
+							    </div>
+
+							    <div class="plane-wrapper">
+							      <span class="plane-title">Indonesia</span>
+							      <div class="plane">
+							        <img src="https://source.unsplash.com/DxmBSgUYKis/1600x900" alt="Photo by sutirta budiman on Unsplash" crossorigin />
+							      </div>
+							    </div>
+
+							    <div class="plane-wrapper">
+							      <span class="plane-title">Maldives</span>
+							      <div class="plane">
+							        <img src="https://source.unsplash.com/lT9rqfG7lcQ/1280x720" alt="Photo by Jailam Rashad on Unsplash" crossorigin />
+							      </div>
+							    </div>
+
+							    <div class="plane-wrapper">
+							      <span class="plane-title">Greece</span>
+							      <div class="plane">
+							        <img src="https://source.unsplash.com/QXW1YEMhq_4/1280x720" alt="Photo by Chris Karidis on Unsplash" crossorigin />
+							      </div>
+							    </div>
+
+							    <div class="plane-wrapper">
+							      <span class="plane-title">Fiji</span>
+							      <div class="plane">
+							        <img src="https://source.unsplash.com/3jtm7BMsaPA/1280x720" alt="Photo by Lili Ortiz on Unsplash" crossorigin />
+							      </div>
+							    </div>
+
+							    <div class="plane-wrapper">
+							      <span class="plane-title">Thailand</span>
+							      <div class="plane">
+							        <img src="https://source.unsplash.com/Mwg_MdX-Jx4/1280x720" alt="Photo by Samule Sun on Unsplash" crossorigin />
+							      </div>
+							    </div>
+							</div>
+						</div> -->
 						<div class="glideContainer">
 						   	<div class="glide">
 					            <div class="glide__track" data-glide-el="track">
@@ -137,7 +189,6 @@
 					<div class="container"><hr></div>
 				</section>
 			</main>
-
 			<footer class="footer">
 				<div class="container">
 					<div class="footerText">
@@ -161,13 +212,9 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
 	<script type="text/javascript" src="src/script/files/helpers.js"></script>
 	<script type="text/javascript" src="src/script/app.js"></script>
-
-
-	<script type="text/javascript" id="indexScript" src="src/script/index.js"></script>
 </body>
 </html>

@@ -4,27 +4,79 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Beneficios</title>
+	<link rel="preload" as="style" href="src/css/style.scss">
 	<link rel="stylesheet" type="text/css" href="src/css/style.scss">
 </head>
 <body>
 	<div id="canvasBackground"><canvas id="paintonme"></canvas></div>
 	<div id="maximusContainer">
 		<div id="scrollContainer">
+			<header>
+				<div class="logoHeaderContainer">
+					<a class="logoHeader" href="index.html"><img src="src/assets/frenkel-logo-blanco.svg" loading="lazy" alt="Frenkel-logo"/></a>
+				</div>
+				<input type="checkbox" name="menu" id="menuHamburguer">
+				<label for="menuHamburguer">
+					<div class="hamburguer load" id="nav-icon2">
+						<span></span><span></span><span></span><span></span><span></span>
+						<div id="containerSpan6" style="transform: rotate(45deg);"><span></span></div>
+						<div id="containerSpan7" style="transform: rotate(-45deg);"><span></span></div>
+						<div id="containerSpan8" style="transform: rotate(135deg);"><span></span></div>
+						<div id="containerSpan9" style="transform: rotate(45deg);"><span></span></div>
+					</div>
+				</label>
+				<nav id="nav">
+					<ul id="navUl">
+						<li><a href="index.html"><span>NOSOTROS</span></a></li>
+						<li><a href="beneficios.html" class="active"><span>BENEFICIOS</span></a></li>
+						<li><a href="servicios.html"><span>SERVICIOS</span></a></li>
+						<li><a href="servicios.html"><span>INOVACIÓN 4.0</span></a></li>
+						<li><a href="servicios.html"><span>CAPACITACIÓN</span></a></li>
+					</ul>
+				</nav>
+			</header>
 			<main id="main" data-router-wrapper>
 				<section class="sectionView" data-router-view="about">
 					<div class="sectionFirst" id="firstSectionAbout">
 						<div class="container">
-							<h1>¿Qué beneficios le interesa conseguir?</h1>
+							<h1 class="title">¿Qué beneficios le interesa conseguir?</h1>
 							<select id="beneficiosSelecct">
 								<option value="0">Maximizar el potencial de mi planta</option>
 								<option value="1">Opcion 2</option>
 							</select>
+							<div class="containerBeneficios">
+								<img src="src/assets/video-poster.jpg" alt="beneficios" loading="lazy"/>
+								<p><b>Analizamos la planta en su totalidad</b> para ayudarte a mejorar sus procesos productivos y producto final.</p>
+							</div>
 						</div>
 					</div>
 				</section> 
 			</main>
+			<footer class="footer">
+				<div class="container">
+					<div class="footerText">
+						<img src="src/assets/Frenkel-logo.svg" loading="lazy" alt="Frenkel-logo"/>
+					</div>
+					<div class="footerText">
+						<a href="mailto:admon@frenkel.com.mx" target="_blank" data-router-disabled>admon@frenkel.com.mx</a>
+					</div>
+					<div class="footerText">
+						<a href="tel:+52 (55)1659-1804" target="_blank" data-router-disabled>+52 (55)1659-1804</a><br>
+						<a href="tel:+52 (55)1659-1801" target="_blank" data-router-disabled>+52 (55)1659-1801</a>
+					</div>
+					<div class="footerText">
+						<a href="https://goo.gl/maps/CtZQDCBTMGk4TYeV7" target="_blank">Fernando Ramírez 107, Col. Obrera,<br> CP. 06800, Cuauhtémoc, CDMX</a>
+					</div>
+					<div class="footerText">
+						<a href="#" target="_blank">Aviso de privacidad</a> ©2021. Todos los derechos reservados
+					</div>
+				</div>
+			</footer>
 		</div>
 	</div>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+	<script type="text/javascript" src="src/script/files/helpers.js"></script>
 	<script type="text/javascript" src="src/script/app.js"></script>
 </body>
 </html>
