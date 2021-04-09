@@ -48,7 +48,6 @@ class Drawing{
 
 		for (let i = 0; i < this.positions.length; i++) {
 	      let pos = this.positions[i];
-
 	      this.ctx.beginPath(); // begin
 	      // this.ctx.strokeStyle = `rgb(0, ${this.map(i, 0, this.maxLength, 100, 255)})`;
 	      this.ctx.strokeStyle = `rgb(255, ${this.map(i, 0, this.maxLength, 100, 255)})`;

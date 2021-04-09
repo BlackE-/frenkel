@@ -1,5 +1,5 @@
 import Glide from '@glidejs/glide';
-// import "@lottiefiles/lottie-player";
+import lottie from 'lottie-web';
 // import Slider from './files/slider.js';
 class Animations{
 	constructor(){}
@@ -17,6 +17,13 @@ class Animations{
 					460: {perView: 1,peek: 50}
 				}
 			}).mount();
+			const anim = lottie.loadAnimation({
+		      container: document.querySelector("lottie-player"),
+		      renderer: 'svg',
+		      loop: true,
+		      autoplay: true,
+		      path: 'https://www.studio-sub.com/clientes/frenkel/json/Frenkel-logo.json',
+		    });
 
 
 			// custom options
@@ -30,8 +37,6 @@ class Animations{
 			// // let's go!
 			// var slider = new Slider(options);
 		},1000);
-
-		
 
 		let tl = gsap.timeline({scrollTrigger: {trigger: "#firstSectionHome"}});
 		tl.addLabel("start-Home")
@@ -61,37 +66,64 @@ class Animations{
 		  .to(".btnContainer", {opacity: 1,scale:1, duration: 0.5})
 		  .addLabel("end-botones");
 
-
 		let tl4 = gsap.timeline({scrollTrigger: {trigger: ".sectionPartners"}});
 		tl4.addLabel("start-partners")
 		  .from("#partnerContainer", {opacity: 0,scale:1.2})
 		  .to("#partnerContainer", {opacity: 1,scale:1, duration: 0.5})
 		  .addLabel("end-partners");
+
+		document.getElementById('linkTransitionBeneficios').addEventListener('click',(e)=>{
+			document.getElementById('linkTransitionBeneficios').setAttribute('x',e.clientX);
+			document.getElementById('linkTransitionBeneficios').setAttribute('y',e.clientY);
+		});
+
+		document.getElementById('linkTransitionServicios').addEventListener('click',(e)=>{
+			document.getElementById('linkTransitionServicios').setAttribute('x',e.clientX);
+			document.getElementById('linkTransitionServicios').setAttribute('y',e.clientY);
+		});
 	}
 
 	beneficios(){
-		console.log('beneficios');
+		this.header();
 		let tl = gsap.timeline({scrollTrigger: {trigger: "#firstSectionAbout"}});
 		tl.addLabel("start-Home")
 		  .from("#firstSectionAbout title", {opacity: 0,scale:1.2})
 		  .to("#firstSectionAbout title", {opacity: 1,scale:1, duration: 0.5})
-		  .from("#beneficiosSelecct", {opacity: 0,scale:1.2})
-		  .to("#beneficiosSelecct", {opacity: 1,scale:1, duration: 0.5})
+		  .from("#select_wrapper", {opacity: 0,scale:1.2})
+		  .to("#select_wrapper", {opacity: 1,scale:1, duration: 0.5})
 		  .from(".containerBeneficios", {opacity: 0,scale:1.3})
 		  .to(".containerBeneficios", {opacity: 1,scale:1, duration: 0.5})
 		  .addLabel("end-Home");
+
+		let select_title = document.getElementById('select_title');
+		let select_wrapper = document.getElementById('select_wrapper');
+		let select_content = document.getElementById('select_content');
+		let li = [...document.querySelectorAll('.select_inner li')];
+		let sections = [...document.querySelectorAll('.containerBeneficios section')];
+		select_title.addEventListener('click',()=>{	select_wrapper.classList.toggle('openSelect');});
+		for(let i of li){
+			i.addEventListener('click',function(){
+				for(let item of li){item.classList.remove('active');}
+				i.classList.add('active');
+				for(let s of sections){s.classList.remove('active');}
+				let section = document.getElementById(`content_${i.getAttribute('id')}`);
+				section.classList.add('active');
+			});
+		}
 	}
 
 	servicios(){
-		console.log('servicios');
+		this.header();
 	}
 
+	header(){
+		const tl = gsap.timeline({repeatDelay: 1});
+		tl.from(".logoHeader", {opacity: 0,scale:1.2});
+		tl.to(".logoHeader", {opacity: 1,scale:1, duration: 0.05});
+	}
 	footer(){
-		let tlFooter = gsap.timeline({scrollTrigger: {trigger: ".footer"}});
-		tlFooter.addLabel("start-footer")
-		  .from(".footerText", {opacity: 0,scale:1.2})
-		  .to(".footerText", {opacity: 1,scale:1, duration: 0.5})
-		  .addLabel("end-footer");
+		const tlFooter = gsap.timeline({scrollTrigger: {trigger: ".footer",scrub:1}});
+		tlFooter.addLabel("start-footer").from(".footerText", {opacity: 0,scale:1.2}).to(".footerText", {opacity: 1,scale:1, duration: 0.05}).addLabel("end-footer");
 	}
 
 	loadCSS(filename){ 

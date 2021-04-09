@@ -57,7 +57,6 @@ const checkLinkAnimations = (link) =>{
 
 const checkLinkTransitions = (link) =>{
 	maximusContainer.classList = '';
-
 	let l = link.split('/');
 	switch(l[l.length-1]){
 		case "servicios.html":setOrange();break;
@@ -66,14 +65,8 @@ const checkLinkTransitions = (link) =>{
 	}
 }
 
-const setOrange = () => {
-	_draw.setBackground('rgb(211, 117, 34)');
-	maximusContainer.classList.add('orange');
-}
-const setBlue = () =>{
-	_draw.setBackground('rgb(44, 116, 184)');
-	maximusContainer.classList.add('blue');
-}
+const setOrange = () => {_draw.setBackground('rgb(211, 117, 34)');maximusContainer.classList.add('orange');}
+const setBlue = () =>{_draw.setBackground('rgb(44, 116, 184)');maximusContainer.classList.add('blue');}
 const setWhite = () =>{_draw.setBackground('rgb(233, 233, 233)');}
 
 
@@ -84,6 +77,4 @@ const setWhite = () =>{_draw.setBackground('rgb(233, 233, 233)');}
 	// maximusContainer.classList.add('scroll');
 	// document.getElementById('scrollContainer').classList.add('scroll');
 // }
-
-
 checkLinkAnimations(window.location.href);

@@ -27,16 +27,12 @@ class Overlap extends Highway.Transition {
 
   out({ from,trigger, done }) {
     let triggerLink = trigger.getAttribute('id');
-    document.getElementById(triggerLink).classList.add('clicked');
+    let btn = document.getElementById(triggerLink);
+    btn.classList.add('clicked');
 
-    // switch(triggerLink){
-    //   case 'linkTransitionServicios':
-    //     document.getElementById('serviciostransitionPage').classList.add('clicked');
-    //   break;
-    //   case 'linkTransitionBeneficios':
-    //     document.getElementById('beneficiostransitionPage').classList.add('clicked');
-    //   break;
-    // }
+    let dialog = document.getElementById(`${triggerLink}Dialog`);
+    dialog.style.transformOrigin = `${btn.getAttribute('x')}px ${btn.getAttribute('y')}px`;
+    dialog.classList.add('clicked');
     
     setTimeout(()=>{window.scrollTo(0, 0);},2000);
     setTimeout(()=>{done();},3000);

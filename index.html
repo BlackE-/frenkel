@@ -12,9 +12,6 @@
 	<div id="maximusContainer">
 		<div id="scrollContainer">
 			<header>
-				<div class="logoHeaderContainer">
-					<a class="logoHeader" href="index.html"><img src="src/assets/frenkel-logo-blanco.svg" loading="lazy" alt="Frenkel-logo"/></a>
-				</div>
 				<input type="checkbox" name="menu" id="menuHamburguer">
 				<label for="menuHamburguer">
 					<div class="hamburguer load" id="nav-icon2">
@@ -45,7 +42,7 @@
 						<div class="container">
 							<p id="firstSectionHomeText"><span>En Frenkel nos dedicamos a brindar soluciones integrales de ingeniería para que su empresa sea parte de la cuarta revolución industrial.</span></p>
 							<div>
-								<lottie-player id="logoHome" src="https://www.studio-sub.com/clientes/frenkel/json/Frenkel-logo.json" background="transparent" speed="1" style="width: 100%;max-width: 500px;" loop autoplay></lottie-player>
+								<lottie-player id="logoHome" autoplay controls loop mode="normal" style="width: 100%;max-width: 500px;"></lottie-player>
 							</div>
 							
 							<div class=" videoContainer">
@@ -187,31 +184,33 @@
 						</div>
 					</div>
 					<div class="container"><hr></div>
+					<footer class="footer">
+						<div class="container">
+							<div class="footerText">
+								<img src="src/assets/Frenkel-logo.svg" loading="lazy" alt="Frenkel-logo"/>
+							</div>
+							<div class="footerText">
+								<a href="mailto:admon@frenkel.com.mx" target="_blank" data-router-disabled>admon@frenkel.com.mx</a>
+							</div>
+							<div class="footerText">
+								<a href="tel:+52 (55)1659-1804" target="_blank" data-router-disabled>+52 (55)1659-1804</a><br>
+								<a href="tel:+52 (55)1659-1801" target="_blank" data-router-disabled>+52 (55)1659-1801</a>
+							</div>
+							<div class="footerText">
+								<a href="https://goo.gl/maps/CtZQDCBTMGk4TYeV7" target="_blank">Fernando Ramírez 107, Col. Obrera,<br> CP. 06800, Cuauhtémoc, CDMX</a>
+							</div>
+							<div class="footerText">
+								<a href="#" target="_blank">Aviso de privacidad</a> ©2021. Todos los derechos reservados
+							</div>
+						</div>
+					</footer>
+					<dialog class="dialogBtn" id="linkTransitionBeneficiosDialog" open></dialog>
+					<dialog class="dialogBtn" id="linkTransitionServiciosDialog" open></dialog>
 				</section>
 			</main>
-			<footer class="footer">
-				<div class="container">
-					<div class="footerText">
-						<img src="src/assets/Frenkel-logo.svg" loading="lazy" alt="Frenkel-logo"/>
-					</div>
-					<div class="footerText">
-						<a href="mailto:admon@frenkel.com.mx" target="_blank" data-router-disabled>admon@frenkel.com.mx</a>
-					</div>
-					<div class="footerText">
-						<a href="tel:+52 (55)1659-1804" target="_blank" data-router-disabled>+52 (55)1659-1804</a><br>
-						<a href="tel:+52 (55)1659-1801" target="_blank" data-router-disabled>+52 (55)1659-1801</a>
-					</div>
-					<div class="footerText">
-						<a href="https://goo.gl/maps/CtZQDCBTMGk4TYeV7" target="_blank">Fernando Ramírez 107, Col. Obrera,<br> CP. 06800, Cuauhtémoc, CDMX</a>
-					</div>
-					<div class="footerText">
-						<a href="#" target="_blank">Aviso de privacidad</a> ©2021. Todos los derechos reservados
-					</div>
-				</div>
-			</footer>
 		</div>
 	</div>
-	<script type="text/javascript" src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
 	<script type="text/javascript" src="src/script/files/helpers.js"></script>

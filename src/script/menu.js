@@ -14,20 +14,15 @@ class Menu{
 		setTimeout(()=>this.icon.classList.remove('load'), 1500)
 	}
 	openMenu(){
-		this.menu.classList.remove('close');
 		this.icon.classList.add('open');
-
 		this.nav.classList.remove('close');
 		this.nav.classList.add('open');
-
 		this.ul.classList.add('open');
 	}
 
 	closeMenu(){
-		this.menu.classList.remove('open');
 		this.icon.classList.remove('open');
 		this.icon.classList.add('close');
-
 		this.nav.classList.remove('open');
 		this.nav.classList.add('close');
 	}
