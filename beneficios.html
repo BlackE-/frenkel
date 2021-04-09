@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +12,6 @@
 	<div id="maximusContainer">
 		<div id="scrollContainer">
 			<header>
-				<div class="logoHeaderContainer">
-					<a class="logoHeader" href="index.html"><img src="src/assets/frenkel-logo-blanco.svg" loading="lazy" alt="Frenkel-logo"/></a>
-				</div>
 				<input type="checkbox" name="menu" id="menuHamburguer">
 				<label for="menuHamburguer">
 					<div class="hamburguer load" id="nav-icon2">
@@ -37,41 +34,52 @@
 			</header>
 			<main id="main" data-router-wrapper>
 				<section class="sectionView" data-router-view="about">
+					<div class="logoHeaderContainer">
+						<a class="logoHeader" href="index.html"><img src="src/assets/frenkel-logo-blanco.svg" loading="lazy" alt="Frenkel-logo"/></a>
+					</div>
 					<div class="sectionFirst" id="firstSectionAbout">
 						<div class="container">
-							<h1 class="title">¿Qué beneficios le interesa conseguir?</h1>
-							<select id="beneficiosSelecct">
-								<option value="0">Maximizar el potencial de mi planta</option>
-								<option value="1">Opcion 2</option>
-							</select>
+							<p class="title">¿Qué beneficios le interesa conseguir?</p>
+							<div class="select_wrapper" id="select_wrapper">
+								<span id="select_title">Maximimar el potencial de mi planta</span>
+								<!-- <span id="select_title"></span> -->
+							    <ul class="select_inner" id="select_inner">
+							    	<li id="Html5" class="active">Maximimar el potencial de mi planta</li>
+							    	<li id="CSS3">CSS3</li>
+							    	<li id="Javascript">Javascript</li>
+							    	<li id="Ruby">Ruby</li>
+							    	<li id="Python">Python</li>
+							    	<li id="C++">C++</li>
+							    </ul>
+							</div>
 							<div class="containerBeneficios">
 								<img src="src/assets/video-poster.jpg" alt="beneficios" loading="lazy"/>
 								<p><b>Analizamos la planta en su totalidad</b> para ayudarte a mejorar sus procesos productivos y producto final.</p>
 							</div>
 						</div>
 					</div>
+					<footer class="footer">
+						<div class="container">
+							<div class="footerText">
+								<img src="src/assets/Frenkel-logo.svg" loading="lazy" alt="Frenkel-logo"/>
+							</div>
+							<div class="footerText">
+								<a href="mailto:admon@frenkel.com.mx" target="_blank" data-router-disabled>admon@frenkel.com.mx</a>
+							</div>
+							<div class="footerText">
+								<a href="tel:+52 (55)1659-1804" target="_blank" data-router-disabled>+52 (55)1659-1804</a><br>
+								<a href="tel:+52 (55)1659-1801" target="_blank" data-router-disabled>+52 (55)1659-1801</a>
+							</div>
+							<div class="footerText">
+								<a href="https://goo.gl/maps/CtZQDCBTMGk4TYeV7" target="_blank">Fernando Ramírez 107, Col. Obrera,<br> CP. 06800, Cuauhtémoc, CDMX</a>
+							</div>
+							<div class="footerText">
+								<a href="#" target="_blank">Aviso de privacidad</a> ©2021. Todos los derechos reservados
+							</div>
+						</div>
+					</footer>
 				</section> 
 			</main>
-			<footer class="footer">
-				<div class="container">
-					<div class="footerText">
-						<img src="src/assets/Frenkel-logo.svg" loading="lazy" alt="Frenkel-logo"/>
-					</div>
-					<div class="footerText">
-						<a href="mailto:admon@frenkel.com.mx" target="_blank" data-router-disabled>admon@frenkel.com.mx</a>
-					</div>
-					<div class="footerText">
-						<a href="tel:+52 (55)1659-1804" target="_blank" data-router-disabled>+52 (55)1659-1804</a><br>
-						<a href="tel:+52 (55)1659-1801" target="_blank" data-router-disabled>+52 (55)1659-1801</a>
-					</div>
-					<div class="footerText">
-						<a href="https://goo.gl/maps/CtZQDCBTMGk4TYeV7" target="_blank">Fernando Ramírez 107, Col. Obrera,<br> CP. 06800, Cuauhtémoc, CDMX</a>
-					</div>
-					<div class="footerText">
-						<a href="#" target="_blank">Aviso de privacidad</a> ©2021. Todos los derechos reservados
-					</div>
-				</div>
-			</footer>
 		</div>
 	</div>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
