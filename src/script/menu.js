@@ -14,6 +14,7 @@ class Menu{
 		setTimeout(()=>this.icon.classList.remove('load'), 1500)
 	}
 	openMenu(){
+		this.icon.classList.remove('close');
 		this.icon.classList.add('open');
 		this.nav.classList.remove('close');
 		this.nav.classList.add('open');

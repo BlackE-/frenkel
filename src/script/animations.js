@@ -1,11 +1,10 @@
 import Glide from '@glidejs/glide';
 import lottie from 'lottie-web';
+import ServiciosMenu from './files/ServiciosMenu.js';
 // import Slider from './files/slider.js';
 class Animations{
 	constructor(){}
-
 	index(){
-		console.log('index');
 		setTimeout(()=>{
 			new Glide('.glide', {
 				type: 'carousel',autoplay: 0,animationDuration: 600,animationTimingFunc: 'linear',focusAt: 0,
@@ -85,16 +84,6 @@ class Animations{
 
 	beneficios(){
 		this.header();
-		let tl = gsap.timeline({scrollTrigger: {trigger: "#firstSectionAbout"}});
-		tl.addLabel("start-Home")
-		  .from("#firstSectionAbout title", {opacity: 0,scale:1.2})
-		  .to("#firstSectionAbout title", {opacity: 1,scale:1, duration: 0.5})
-		  .from("#select_wrapper", {opacity: 0,scale:1.2})
-		  .to("#select_wrapper", {opacity: 1,scale:1, duration: 0.5})
-		  .from(".containerBeneficios", {opacity: 0,scale:1.3})
-		  .to(".containerBeneficios", {opacity: 1,scale:1, duration: 0.5})
-		  .addLabel("end-Home");
-
 		let select_title = document.getElementById('select_title');
 		let select_wrapper = document.getElementById('select_wrapper');
 		let select_content = document.getElementById('select_content');
@@ -114,6 +103,7 @@ class Animations{
 
 	servicios(){
 		this.header();
+		new ServiciosMenu( document.querySelectorAll(".circle-container li"), document.querySelectorAll(".sectionServicios") );
 	}
 
 	header(){

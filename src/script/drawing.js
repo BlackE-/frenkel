@@ -1,18 +1,21 @@
-
 import Mouse from './files/mouse.js';
-
 class Drawing{
-	constructor(id) {
+	constructor(id,fps) {
 		this.canvas = document.getElementById(id);
 		this.ctx = this.canvas.getContext("2d");
 		this.mouse = new Mouse();
 		this.myRef;
-		this.maxLength = 10;
+		// this.maxLength = 10;
+		this.maxLength = 5;
 		this.background = 'rgb(255,255,255)';
 
 		this.positions = [];
 		const onResizeHandler = this.debounce(this.onResize.bind(this), 100,this);
 		window.addEventListener('resize', onResizeHandler, false);
+
+		this.fpsInterval = 1000 / fps;
+	    this.then = Date.now();
+	    this.startTime = this.then;
         this.onResize();
         this.animate();
 	}
@@ -23,8 +26,19 @@ class Drawing{
 	}
 	
 	animate() {
+	    // request another frame http://jsfiddle.net/m1erickson/CtsY3/
 		this.myRef = requestAnimationFrame(() => this.animate());
-		this.render();
+		// calc elapsed time since last loop
+	    let now = Date.now();
+	    let elapsed = now - this.then;
+
+	    // if enough time has elapsed, draw the next frame
+	    if (elapsed > this.fpsInterval) {
+	        // Get ready for next frame by setting then=now, but...
+	        // Also, adjust for fpsInterval not being multiple of 16.67
+	        this.then = now - (elapsed % this.fpsInterval);
+	        this.render();
+	    }
 	}
 
 	setBackground(color){
@@ -58,7 +72,13 @@ class Drawing{
 	      this.ctx.closePath();
 	    }
 	}
-	
+	/**
+	 * debouncing, executes the function if there was no new event in $wait milliseconds
+	 * @param func
+	 * @param wait
+	 * @param scope
+	 * @returns {Function}
+	 */
 	debounce(func, wait, scope) {
         var timeout;
         return function () {

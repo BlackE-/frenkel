@@ -10,7 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "@dogstudio/highway": "^2.2.1",
+    "@dotlottie/player-component": "^1.0.3",
     "@glidejs/glide": "^3.4.1",
+    "@lottiefiles/lottie-player": "^1.0.3",
     "gsap": "^3.6.1",
     "highway": "0.0.5",
     "lottie-web": "^5.7.7",

@@ -1,12 +1,12 @@
 import Menu from './menu.js';
 import Highway from '@dogstudio/highway';
 import Fade from './fade.js';
-import Overlap from './overlap.js';
+import Expand from './expand.js';
 // import SmoothScroll from './scroll.js';
 import Drawing from './drawing.js';
 import Animations from './animations.js';
 
-const _draw = new Drawing('paintonme');
+const _draw = new Drawing('paintonme',5);
 const _animations = new Animations();
 const _menu = new Menu('menuHamburguer','nav-icon2','nav','navUl');
 const linksMenu = document.querySelectorAll('nav a');
@@ -18,7 +18,7 @@ const H = new Highway.Core({
 	transitions:{
 		default: Fade,
 		contextual: {
-	      overlap: Overlap
+	      overlap: Expand
 	    }
 	}
 });
@@ -65,9 +65,15 @@ const checkLinkTransitions = (link) =>{
 	}
 }
 
-const setOrange = () => {_draw.setBackground('rgb(211, 117, 34)');maximusContainer.classList.add('orange');}
-const setBlue = () =>{_draw.setBackground('rgb(44, 116, 184)');maximusContainer.classList.add('blue');}
-const setWhite = () =>{_draw.setBackground('rgb(233, 233, 233)');}
+const setOrange = () => {
+	_draw.setBackground('rgb(211, 117, 34)');
+maximusContainer.classList.add('orange');}
+const setBlue = () =>{
+	_draw.setBackground('rgb(44, 116, 184)');
+	maximusContainer.classList.add('blue');}
+const setWhite = () =>{
+	_draw.setBackground('rgb(233, 233, 233)');
+}
 
 
 /*			scroll mobile 			*/

@@ -7,7 +7,8 @@ class Mouse{
     }
 
     addEvents() {
-        const mouseMove = this.throttle(this.update.bind(this), 100,this);
+        // const mouseMove = this.throttle(this.update.bind(this), 100,this);
+        const mouseMove = this.debounce(this.update.bind(this), 100,this);
         document.addEventListener('mousemove', mouseMove, false);
         document.addEventListener('touchmove', mouseMove, false);
     }
@@ -55,6 +56,19 @@ class Mouse{
                 last = now;
                 fn.apply(context, args);
             }
+        };
+    }
+
+    debounce(func, wait, scope) {
+        var timeout;
+        return function () {
+            var context = scope || this, args = arguments;
+            var later = function () {
+                timeout = null;
+                func.apply(context, args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
         };
     }
 
