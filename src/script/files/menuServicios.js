@@ -1,7 +1,8 @@
-class ServiciosMenu{
-    constructor(liElements,liText){
+class MenuServicios{
+    constructor(liElements,liText,swiperArea){
         this.isMobile = this.mobileCheck();
         this.xDown  =  null;
+        this.swiperArea = typeof(swiperArea) === 'string' ? document.querySelector(swiperArea) : swiperArea;
         this.liText = typeof (liText) ===  'string'  ? document.querySelectorAll(liText) : liText;
         this.liElements  =  typeof (liElements) ===  'string'  ?  document.querySelectorAll(liElements) :  liElements;
         this.numberOfElements = liElements.length ;
@@ -13,6 +14,7 @@ class ServiciosMenu{
         this.dragX = 0;
         this.xDown = null;
         this.init();
+        window.addEventListener('resize',function(){this.setMenu()}.bind(this),false);  
     }
 
     setMenu = () =>{
@@ -54,14 +56,14 @@ class ServiciosMenu{
         if (!this.xDown) {
             return;
         }
-        let xUp  =  evt.touches[0].clientX;
+        let xUp = (evt.type === "touchmove") ?  evt.touches[0].clientX :  evt.clientX;
         this.xDiff  = this.xDown  -  xUp;
 
         if (Math.abs(this.xDiff) !==  0) {
             if (this.xDiff  >  2) {
-                typeof (this.onLeft) ===  "function"  && this.onLeft();
-            } else  if (this.xDiff  <  -2) {
                 typeof (this.onRight) ===  "function"  && this.onRight();
+            } else  if (this.xDiff  <  -2) {
+                typeof (this.onLeft) ===  "function"  && this.onLeft();
             }
         }
         // Reset values.
@@ -83,21 +85,21 @@ class ServiciosMenu{
     }
 
     initMenu = () =>{ 
-      Object.entries(this.liElements).forEach(([key, value]) => {
-        if(this.isMobile){
-            value.addEventListener('touchstart', function (evt) {evt.preventDefault();console.log("touchstart");this.xDown  =  evt.touches[0].clientX;}.bind(this), false);
-            value.addEventListener('touchmove', function (evt) {this.handleTouchMove(evt);}.bind(this), false);
-        }else{
-            value.addEventListener("click",function(){
-              if(!value.classList.contains('active')){
-                console.log("click");
-                this.clicked = parseInt(value.getAttribute('id'));
-                this.setMenu();
-                this.prevClicked = this.clicked;
-              }
-            }.bind(this), false);
-        }
-      });
+      // Object.entries(this.liElements).forEach(([key, value]) => {
+      //   value.addEventListener("click",function(){
+      //     if(!value.classList.contains('active')){
+      //       this.clicked = parseInt(value.getAttribute('id'));
+      //       this.setMenu();
+      //       this.prevClicked = this.clicked;
+      //     }
+      //   }.bind(this), false); 
+      // });
+
+      this.swiperArea.addEventListener('touchstart', function (evt) {evt.preventDefault();this.xDown  =  evt.touches[0].clientX;}.bind(this), false);
+      this.swiperArea.addEventListener('touchmove', function (evt) {this.handleTouchMove(evt);}.bind(this), false);
+
+      this.swiperArea.addEventListener('mousedown', function (evt) {evt.preventDefault();this.xDown = evt.clientX;}.bind(this), false);
+      this.swiperArea.addEventListener('mousemove', function (evt) {this.handleTouchMove(evt);}.bind(this), false);
     }
 
     mobileCheck = () =>{
@@ -118,4 +120,4 @@ class ServiciosMenu{
     }
 }
 
-export default ServiciosMenu;
+export default MenuServicios;
