@@ -15,7 +15,7 @@ class Animations{
 
 	servicios(){
 		this.header();
-		new MenuServicios( document.querySelectorAll(".circle-container li"), document.querySelectorAll(".sectionServicios"),document.getElementById('firstSectionServices'));
+		new MenuServicios( document.querySelectorAll(".circle-container li"), document.querySelectorAll(".sectionServicios"),document.getElementById('swipeArea'));
 	}
 
 	header(){

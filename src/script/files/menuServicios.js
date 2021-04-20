@@ -91,8 +91,8 @@ class MenuServicios{
         this.prevClicked = this.clicked;
     }
 
-    initMenu = () =>{ 
-      if(!this.mobileCheck()){
+    initMenu = () =>{
+      if(!this.isMobile){
           Object.entries(this.liElements).forEach(([key, value]) => {
             value.addEventListener("click",function(){
               if(!value.classList.contains('active')){
@@ -115,6 +115,8 @@ class MenuServicios{
       }.bind(this), false);
 
       this.swiperArea.addEventListener('mousemove', function (evt) {this.handleTouchMove(evt);}.bind(this), false);
+
+      console.log(this.swiperArea);
     }
 
     mobileCheck = () =>{

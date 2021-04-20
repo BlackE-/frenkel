@@ -288,7 +288,7 @@ hr{background:#818181;margin:50px 20px 0 20px;border: 0;height: 1px;}
 
 #containerMenu{position: absolute;touch-action: none;border: 3px solid #eabe97;
 	border-radius: 50%;z-index: 0;width: 490px;height: 500px;top: -180px;left: calc(50% - 255px);}
-.titleServicios{margin:0 auto;text-align: center;color:#fff;margin-bottom: 40vh;}
+.titleServicios{margin:0 auto;text-align: center;color:#fff;padding-bottom: 40vh;}
 ul#ulMenu{position: relative;top: 200px;left:calc(50% - 45px);list-style: none;padding: 0;width: 0px;
   li{position: absolute;z-index:10;width:80px;height: 80px;border-radius: 50%;background:#e9ba91;border:3px solid #d37522;display: grid;align-items: center;transform-origin: 50%;-webkit-transition: 500ms ease-in-out;-moz-transition: 500ms ease-in-out;transition: 500ms ease-in-out;
     img{width:50%;margin:0 auto;opacity: 0;}
@@ -304,7 +304,7 @@ ul#ulMenu{position: relative;top: 200px;left:calc(50% - 45px);list-style: none;p
     p{opacity: 1}
   }
 }
-ul#ulText{text-align: center;list-style: none;padding:0;position: relative;width: 320px;margin:0 auto;
+ul#ulText{text-align: center;list-style: none;padding:0;position: relative;width: 320px;margin:0 auto;min-height: 100vh;
    li section{position:absolute;top:0;left:50%;width:100%;opacity: 0;transform-origin: 50%;-webkit-transition: 500ms ease-in-out;-moz-transition: 500ms ease-in-out;transition: 500ms ease-in-out;color:#fff;
     h2{font-size: 1.5em;opacity: 0.5;font-weight: 500;}
     .arrow{width: 35px;display: block;margin: 15px auto 50px auto;}
@@ -324,8 +324,7 @@ ul#ulText{text-align: center;list-style: none;padding:0;position: relative;width
 @media(max-width: 660px){
   #containerMenu{width: 250px;height: 250px;top: -40px;left: calc(50% - 125px);}
   ul#ulMenu{top:60px;left: calc(50% - 40px);}
-  .titleServicios{margin-bottom: 30vh;}
-  ul#ulText{width:120px;}
+  .titleServicios{padding-bottom: 30vh;}
 }
 
 
