@@ -8,6 +8,7 @@ class Drawing{
 		// this.maxLength = 10;
 		this.maxLength = 5;
 		this.background = 'rgb(255,255,255)';
+		this.strokeStyle = 'rgb(255)';
 
 		this.positions = [];
 		const onResizeHandler = this.debounce(this.onResize.bind(this), 100,this);
@@ -41,13 +42,9 @@ class Drawing{
 	    }
 	}
 
-	setBackground(color){
-		this.background = color;
-	}
-
-	map(n, start1, stop1, start2, stop2) {
-  		return ((n-start1)/(stop1-start1))*(stop2-start2)+start2;
-	}
+	setStrokeStyle(color){this.strokeStyle = color;}
+	setBackground(color){this.background = color;}
+	map(n, start1, stop1, start2, stop2) {return ((n-start1)/(stop1-start1))*(stop2-start2)+start2;}
 
 	render() {
 		this.ctx.globalCompositeOperation = 'source-over';
@@ -58,13 +55,12 @@ class Drawing{
 		this.positions.push([this.mouse.pos.x, this.mouse.pos.y]);
 
 		if (this.positions.length > this.maxLength) {this.positions.splice(0, 1);}
-		this.ctx.shadowColor = 'rgb(255, 255, 255)';
+		this.ctx.shadowColor = this.background;
 
 		for (let i = 0; i < this.positions.length; i++) {
 	      let pos = this.positions[i];
-	      this.ctx.beginPath(); // begin
-	      // this.ctx.strokeStyle = `rgb(0, ${this.map(i, 0, this.maxLength, 100, 255)})`;
-	      this.ctx.strokeStyle = `rgb(255, ${this.map(i, 0, this.maxLength, 100, 255)})`;
+	      this.ctx.beginPath();
+	      this.ctx.strokeStyle = this.strokeStyle;
 	      this.ctx.lineWidth = `${this.map(i, 0, this.maxLength, 420, 220)}`;
 	      this.ctx.shadowBlur = this.map(i, 0, this.maxLength, 255, 200);
 	      this.ctx.arc(pos[0], pos[1], 50, 0, Math.PI * 2, false);

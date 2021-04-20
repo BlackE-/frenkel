@@ -12,8 +12,8 @@ class Index{
 	}
 
 	setGlide = () =>{
-		new Glide(this.slider, {type: 'carousel',autoplay: 0,animationDuration: 600,animationTimingFunc: 'linear',focusAt: 0,perView: 2,peek: 300,
-			breakpoints: {1080: {perView: 2,peek: 100},768: {perView: 1,peek: 200},460: {perView: 1,peek: 50}}
+		new Glide(this.slider, {type: 'carousel',autoplay: 0, animationDuration: 600,animationTimingFunc: 'linear',focusAt: 0,perView: 2,peek: 300,
+			breakpoints: {1080: {perView: 2,peek: 100},768: {perView: 1,peek: 200},460: {perView: 1,peek: 50,gap:20}}
 		}).mount();
 	}
 
@@ -48,16 +48,6 @@ class Index{
 	}
 
 	init = () =>{
-		this.transitionBeneficios.addEventListener('click',function(e){
-			this.transitionBeneficios.setAttribute('x',e.clientX);
-			this.transitionBeneficios.setAttribute('y',e.clientY);
-		}.bind(this),false);
-
-		this.transitionServicios.addEventListener('click',function(e){
-			this.transitionServicios.setAttribute('x',e.clientX);
-			this.transitionServicios.setAttribute('y',e.clientY);
-		}.bind(this),false);
-
 		this.setLottieAnimation();
 		this.setTimelines();
 		setTimeout(()=>{this.setGlide();},1000);

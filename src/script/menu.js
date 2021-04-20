@@ -19,6 +19,7 @@ class Menu{
 		this.nav.classList.remove('close');
 		this.nav.classList.add('open');
 		this.ul.classList.add('open');
+		setTimeout(()=>{this.ul.classList.add('finished')},1000);
 	}
 
 	closeMenu(){
@@ -26,6 +27,8 @@ class Menu{
 		this.icon.classList.add('close');
 		this.nav.classList.remove('open');
 		this.nav.classList.add('close');
+		this.ul.classList.remove('open');
+		this.ul.classList.remove('finished');
 	}
 }
 

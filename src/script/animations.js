@@ -24,8 +24,10 @@ class Animations{
 		tl.to(".logoHeader", {opacity: 1,scale:1, duration: 0.05});
 	}
 	footer(){
-		const tlFooter = gsap.timeline({scrollTrigger: {trigger: ".footer",scrub:1}});
-		tlFooter.addLabel("start-footer").from(".footerText", {opacity: 0,scale:1.2}).to(".footerText", {opacity: 1,scale:1, duration: 0.05}).addLabel("end-footer");
+		document.getElementById('footerDate').innerHtml = new Date().getFullYear();
+		// const tlFooter = gsap.timeline({scrollTrigger: {trigger: ".footer",scrub:1}});
+		const tlFooter = gsap.timeline({scrollTrigger: {trigger: ".footer"}});
+		tlFooter.addLabel("start-footer").from(".footerText", {opacity: 0,scale:1.2}).to(".footerText", {opacity: 1,scale:1, duration: 0.5}).addLabel("end-footer");
 	}
 
 	// loadCSS(filename){ 

@@ -8,6 +8,7 @@ class MenuServicios{
         this.numberOfElements = liElements.length ;
         this.slice = 360 * (1/this.numberOfElements);
 
+        this.wasRight = 0; 
         this.clicked = 0;
         this.prevClicked = 0;  
         this.start = -this.slice;
@@ -35,8 +36,11 @@ class MenuServicios{
           else 
             if(this.prevClicked < this.clicked)  this.setLeft();//left 3
             else this.setRight(); //right 3
-        this.rotateMenu();
+      }else{
+        if(this.wasRight) this.setLeft();
+        else this.setRight();
       }
+      this.rotateMenu();
       return
     }
 
@@ -58,11 +62,10 @@ class MenuServicios{
         }
         let xUp = (evt.type === "touchmove") ?  evt.touches[0].clientX :  evt.clientX;
         this.xDiff  = this.xDown  -  xUp;
-
         if (Math.abs(this.xDiff) !==  0) {
-            if (this.xDiff  >  2) {
+            if (this.xDiff  >  1) {
                 typeof (this.onRight) ===  "function"  && this.onRight();
-            } else  if (this.xDiff  <  -2) {
+            } else  if (this.xDiff  <  -1) {
                 typeof (this.onLeft) ===  "function"  && this.onLeft();
             }
         }
@@ -70,35 +73,47 @@ class MenuServicios{
         this.xDown  =  null;
     }
 
-    setRight = () => {this.start += this.slice; return;}
-    setLeft = () => {this.start -= this.slice; return;}
-    
+    setRight = () => {this.start += this.slice; this.wasRight = 1; return;}
+    setLeft = () => {this.start -= this.slice; this.wasRight = 0; return;}
+
     onLeft  = () => {
+        this.wasRight = 0;
         this.prevClicked = this.clicked;
         switch(this.prevClicked){case 0:this.clicked = 1;break;case 1:this.clicked = 2;break;case 2:this.clicked = 3;break;case 3:this.clicked = 0;break;}
         this.setMenu();
+        this.prevClicked = this.clicked;
     }
     onRight  = () => {
+        this.wasRight = 1;
         this.prevClicked = this.clicked;
         switch(this.prevClicked){case 0:this.clicked = 3;break; case 1:this.clicked = 0;break;case 2:this.clicked = 1;break;case 3:this.clicked = 2;break;}
         this.setMenu();
+        this.prevClicked = this.clicked;
     }
 
     initMenu = () =>{ 
-      // Object.entries(this.liElements).forEach(([key, value]) => {
-      //   value.addEventListener("click",function(){
-      //     if(!value.classList.contains('active')){
-      //       this.clicked = parseInt(value.getAttribute('id'));
-      //       this.setMenu();
-      //       this.prevClicked = this.clicked;
-      //     }
-      //   }.bind(this), false); 
-      // });
+      if(!this.mobileCheck()){
+          Object.entries(this.liElements).forEach(([key, value]) => {
+            value.addEventListener("click",function(){
+              if(!value.classList.contains('active')){
+                this.clicked = parseInt(value.getAttribute('id'));
+                this.setMenu();
+                this.prevClicked = this.clicked;
+              }
+            }.bind(this), false); 
+          });
+      }
 
       this.swiperArea.addEventListener('touchstart', function (evt) {evt.preventDefault();this.xDown  =  evt.touches[0].clientX;}.bind(this), false);
       this.swiperArea.addEventListener('touchmove', function (evt) {this.handleTouchMove(evt);}.bind(this), false);
 
-      this.swiperArea.addEventListener('mousedown', function (evt) {evt.preventDefault();this.xDown = evt.clientX;}.bind(this), false);
+      this.swiperArea.addEventListener('mousedown', function (evt) {
+        let same = false;
+        evt.preventDefault();
+        Object.entries(this.liElements).forEach(([key, value]) => {if( evt.target  == value ){same = true;return}});
+        if(!same){this.xDown = evt.clientX;}
+      }.bind(this), false);
+
       this.swiperArea.addEventListener('mousemove', function (evt) {this.handleTouchMove(evt);}.bind(this), false);
     }
 

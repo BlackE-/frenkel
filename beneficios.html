@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0">
 	<title>Beneficios</title>
 	<link rel="preload" as="style" href="src/css/style.scss">
 	<link rel="stylesheet" type="text/css" href="src/css/style.scss">
@@ -12,14 +12,18 @@
 	<div id="maximusContainer">
 		<div id="scrollContainer">
 			<header>
-				<input type="checkbox" name="menu" id="menuHamburguer">
+				<input type="checkbox" name="menu" id="menuHamburguer" />
 				<label for="menuHamburguer">
 					<div class="hamburguer load" id="nav-icon2">
-						<span></span><span></span><span></span><span></span><span></span>
-						<div id="containerSpan6" style="transform: rotate(45deg);"><span></span></div>
-						<div id="containerSpan7" style="transform: rotate(-45deg);"><span></span></div>
-						<div id="containerSpan8" style="transform: rotate(135deg);"><span></span></div>
-						<div id="containerSpan9" style="transform: rotate(45deg);"><span></span></div>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<div id='containerSpan6'><span></span></div>
+						<div id='containerSpan7'><span></span></div>
+						<div id='containerSpan8'><span></span></div>
+						<div id='containerSpan9'><span></span></div>
 					</div>
 				</label>
 				<nav id="nav">
@@ -39,7 +43,7 @@
 					</div>
 					<div class="sectionFirst" id="firstSectionBeneficios">
 						<div class="container">
-							<p class="title">¿Qué beneficios le interesa conseguir?</p>
+							<h1 class="title">¿Qué beneficios le<br> interesa conseguir?</h1>
 							<div class="select_wrapper" id="select_wrapper">
 								<span id="select_title">
 								    <ul class="select_inner" id="select_inner">
@@ -52,41 +56,55 @@
 							</div>
 							<div class="containerBeneficios" id="select_content">
 								<section id="content_1" class="active">
-									<img src="src/assets/video-poster.jpg" alt="beneficios" loading="lazy"/>
-									<p><b>Analizamos la planta en su totalidad</b> para ayudarte a mejorar sus procesos productivos y producto final.</p>
+									<div>
+										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
+										<p><b>Analizamos la planta en su totalidad</b> para ayudarte a mejorar sus procesos productivos y producto final.</p>
+									</div>
+									<div>
+										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
+										<p><b>Detectamos</b> en dónde están faltando datos, en que parte se cortan los flujos de información y <b>cuándo se toman decisiones antes de tener los datos correctos.</b></p>
+									</div>
+									<div>
+										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
+										<p>Estos datos <b>nos permiten detectar oportunidades e implementar soluciones</b> que resultan en la disminución de mermas e incremento de la productividad tanto de la maquinaria como del personal.</p>
+									</div>
 								</section>
 								<section id="content_2">
-									<img src="src/assets/video-poster.jpg" alt="beneficios" loading="lazy"/>
-									<p><b>Disponibilidad y acceso de la información</p>
+									<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
+									<p>Detectamos en dónde están faltando datos, en que parte se cortan los flujos de información y cuándo se toman decisiones antes de tener los datos correctos.</p>
 								</section>
 								<section id="content_3">
-									<img src="src/assets/video-poster.jpg" alt="beneficios" loading="lazy"/>
+									<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
 									<p><b>Disminución de errores</p>
 								</section>
 								<section id="content_4">
-									<img src="src/assets/video-poster.jpg" alt="beneficios" loading="lazy"/>
+									<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
 									<p><b>Mejorar la comunicación de mi empresa</p>
 								</section>
 							</div>
 						</div>
 					</div>
+					
+					<div class="container"><hr></div>
+
 					<footer class="footer">
 						<div class="container">
 							<div class="footerText">
-								<img src="src/assets/Frenkel-logo.svg" loading="lazy" alt="Frenkel-logo"/>
+								<img src="src/assets/frenkel-logo-blanco.svg" loading="lazy" alt="Frenkel-logo"/>
 							</div>
 							<div class="footerText">
-								<a href="mailto:admon@frenkel.com.mx" target="_blank" data-router-disabled>admon@frenkel.com.mx</a>
+								<p><a href="mailto:admon@frenkel.com.mx" target="_blank" data-router-disabled>admon@frenkel.com.mx</a></p>
 							</div>
 							<div class="footerText">
-								<a href="tel:+52 (55)1659-1804" target="_blank" data-router-disabled>+52 (55)1659-1804</a><br>
-								<a href="tel:+52 (55)1659-1801" target="_blank" data-router-disabled>+52 (55)1659-1801</a>
+								<p><a href="tel:+52 (55)1659-1804" target="_blank" data-router-disabled>+52 (55)1659-1804</a></p>
+								<p><a href="tel:+52 (55)1659-1801" target="_blank" data-router-disabled>+52 (55)1659-1801</a></p>
 							</div>
 							<div class="footerText">
-								<a href="https://goo.gl/maps/CtZQDCBTMGk4TYeV7" target="_blank">Fernando Ramírez 107, Col. Obrera,<br> CP. 06800, Cuauhtémoc, CDMX</a>
+								<p><a href="https://goo.gl/maps/CtZQDCBTMGk4TYeV7" target="_blank">Fernando Ramírez 107, Col. Obrera,<br> CP. 06800, Cuauhtémoc, CDMX</a></p>
 							</div>
 							<div class="footerText">
-								<a href="#" target="_blank">Aviso de privacidad</a> ©2021. Todos los derechos reservados
+								<p><a href="#" target="_blank">Aviso de privacidad</a></p>
+								<p>©<span id="footerDate">2021</span>. Todos los derechos reservados</p>
 							</div>
 						</div>
 					</footer>
