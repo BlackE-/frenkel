@@ -10,12 +10,17 @@ class Animations{
 
 	beneficios(){
 		this.header();
-		new MenuBeneficios('select_wrapper','.select_inner li','.containerBeneficios section');
+		new MenuBeneficios('select_wrapper','.select_inner li','.containerBeneficios section','.box');
 	}
 
 	servicios(){
 		this.header();
-		new MenuServicios( document.querySelectorAll(".circle-container li"), document.querySelectorAll(".sectionServicios"),document.getElementById('swipeArea'));
+		new MenuServicios( 
+			document.querySelectorAll(".circle-container li"),
+			document.querySelectorAll(".sectionServicios"),
+			document.getElementById('swipeArea'),
+			document.querySelectorAll(".box")
+			);
 	}
 
 	header(){

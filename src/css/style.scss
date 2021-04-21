@@ -1,5 +1,4 @@
 @import "../../node_modules/@glidejs/glide/src/assets/sass/glide.core";
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap');
 *{margin:0;padding:0;}
 :root {
   --first-color: #2c74b8;
@@ -11,7 +10,7 @@
   --mobile-size:500px;
 }
 
-body{margin:0;padding: 0;font-family: 'Oswald', sans-serif;font-size:1em;overflow-x:hidden;font-display: swap;}
+body{margin:0;padding: 0;font-family: 'Oswald', sans-serif;font-size:1em;font-weight: 400;overflow-x:hidden;font-display: swap;}
 #maximusContainer{width:100%;height:100%;position: relative;overflow: unset;left: 0;top: 0;overflow: hidden;-webkit-transition: .5s ease-in-out;-moz-transition: .5s ease-in-out; -o-transition: .5s ease-in-out; transition: .5s ease-in-out;
   &.blue{color:#fff;}
   &.orange{color:#fff;}
@@ -252,10 +251,19 @@ hr{background:#818181;margin:50px 20px 0 20px;border: 0;height: 1px;}
 
 
 /*	beneficios	*/
-#firstSectionBeneficios{max-width: 640px;margin:0 auto;}
-#firstSectionBeneficios .container{text-align: center;}
-#firstSectionBeneficios .container img{width: 100%;}
-#firstSectionBeneficios .title{font-weight:500;margin:50px auto;opacity: 1;transform: scale(1);-webkit-transition: .5s ease-in-out;-moz-transition: .5s ease-in-out;-o-transition: .5s ease-in-out;transition: .5s ease-in-out;-webkit-animation:loadAnimation 1s ;-moz-animation:loadAnimation 1s;-ms-animation:loadAnimation 1s;animation:loadAnimation 1s;}
+#firstSectionBeneficios{max-width: 640px;margin:0 auto;
+  .title{font-weight:500;margin:50px auto;opacity: 1;transform: scale(1);-webkit-transition: .5s ease-in-out;-moz-transition: .5s ease-in-out;-o-transition: .5s ease-in-out;transition: .5s ease-in-out;-webkit-animation:loadAnimation 1s ;-moz-animation:loadAnimation 1s;-ms-animation:loadAnimation 1s;animation:loadAnimation 1s;}
+  .container{text-align: center;
+    .boxFirst{
+      img{width:100%;max-width: 320px;margin:0 auto;}
+    }
+    .box{opacity: 0;-webkit-transition: .5s ease-in-out;-moz-transition: .5s ease-in-out;-o-transition: .5s ease-in-out;transition: .5s ease-in-out;
+      &.is-inview{opacity: 1;}
+      img{width:100%;max-width: 320px;margin:0 auto;}
+      
+    }
+  }
+}
 
 .select_wrapper {cursor: pointer;position: relative;margin:50px 0;z-index: 1;opacity: 1;transform: scale(1);-webkit-transition: .5s ease-in-out;-moz-transition: .5s ease-in-out;-o-transition: .5s ease-in-out;transition: .5s ease-in-out;-webkit-animation:loadAnimation 1s ;-moz-animation:loadAnimation 1s;-ms-animation:loadAnimation 1s;animation:loadAnimation 1s;
   span{display: block;margin: 0;padding: 5px 10px;z-index: 9;position: relative;height:45px;background: transparent;
@@ -283,9 +291,6 @@ hr{background:#818181;margin:50px 20px 0 20px;border: 0;height: 1px;}
 
 
 /*  SERVICIOS */
-#firstSectionServices{}
-
-
 #containerMenu{position: absolute;touch-action: none;border: 3px solid #eabe97;
 	border-radius: 50%;z-index: 0;width: 490px;height: 500px;top: -180px;left: calc(50% - 255px);}
 .titleServicios{margin:0 auto;text-align: center;color:#fff;padding-bottom: 40vh;}
@@ -293,6 +298,10 @@ ul#ulMenu{position: relative;top: 200px;left:calc(50% - 45px);list-style: none;p
   li{position: absolute;z-index:10;width:80px;height: 80px;border-radius: 50%;background:#e9ba91;border:3px solid #d37522;display: grid;align-items: center;transform-origin: 50%;-webkit-transition: 500ms ease-in-out;-moz-transition: 500ms ease-in-out;transition: 500ms ease-in-out;
     img{width:50%;margin:0 auto;opacity: 0;}
     svg{width:50%;margin:0 auto;opacity: 0;}
+    &[name="li0"]{transform: rotate(-90deg) translate(15em) rotate(90deg);}
+    &[name="li1"]{transform: rotate(0deg) translate(15em) rotate(0deg);}
+    &[name="li2"]{transform: rotate(90deg) translate(15em) rotate(-90deg);}
+    &[name="li3"]{transform: rotate(180deg) translate(15em) rotate(-180deg);}
   }
   li:hover{cursor: pointer;}
   li:before{content:"";position:absolute;left: -2px;transform: scale(1.1);width:100%;height: 100%;border:2px solid #eabe97;border-radius: 50%;opacity: 0;}
@@ -307,6 +316,9 @@ ul#ulMenu{position: relative;top: 200px;left:calc(50% - 45px);list-style: none;p
 ul#ulText{text-align: center;list-style: none;padding:0;position: relative;width: 320px;margin:0 auto;min-height: 100vh;
    li section{position:absolute;top:0;left:50%;width:100%;opacity: 0;transform-origin: 50%;-webkit-transition: 500ms ease-in-out;-moz-transition: 500ms ease-in-out;transition: 500ms ease-in-out;color:#fff;
     h2{font-size: 1.5em;opacity: 0.5;font-weight: 500;}
+    .box{opacity: 0;-webkit-transition: .5s ease-in-out;-moz-transition: .5s ease-in-out;-o-transition: .5s ease-in-out;transition: .5s ease-in-out;
+      &.is-inview{opacity: 1;}
+    }
     .arrow{width: 35px;display: block;margin: 15px auto 50px auto;}
     span{
       img{max-width: 50px;margin:0 0 10px 0;}

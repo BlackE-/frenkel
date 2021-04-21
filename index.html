@@ -2,10 +2,92 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
+	<title>Frenkel</title>
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0">
-	<title>Frenkel Home</title>
-	<link rel="preload" as="style" href="src/css/style.scss">
+	<meta name="description" content="Frenkel - Transformacion 4.0">
+	<meta name="author" content="Studio SUB">
+	<!-- 
+
+	<link rel="author" href="https://villasflamingos.com/humans.txt" />
+	<link rel="icon" type="image/jpg" href="https://villasflamingos.com/img/favicon.jpg">
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/img/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/img/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/img/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+	-->
+        
+        <!-- <script type="application/ld+json">
+            {
+                  "@context": {
+                    "name": "http://schema.org/name",
+                    "description": "http://schema.org/description",     
+                    "image": {
+                      "@id": "http://schema.org/image",
+                      "@type": "@id"
+                    },
+                    "geo": "http://schema.org/geo",
+                    "latitude": {
+                      "@id": "http://schema.org/latitude",
+                      "@type": "xsd:float"
+                    },
+                    "longitude": {
+                      "@id": "http://schema.org/longitude",
+                      "@type": "xsd:float"
+                    },
+                    "xsd": "http://www.w3.org/2001/XMLSchema#"
+                  },
+                  "@type": "Hotel",
+                  "name": "Villas Flamingos",
+                  "description": "Villas Flamingos, un lugar donde la naturaleza se manifiesta.",
+                  "image": "https://villasflamingos.com/img/logo.jpg",
+                  "geo": {
+                    "latitude": "21.532668",
+                    "longitude": "-87.366205"
+                  }
+                }
+        </script> -->
+
+        
+        <!-- Twitter Card data 
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Villas Flamingos">
+        <meta name="twitter:description" content="Villas Flamingos, un lugar donde la naturaleza se manifiesta.">
+        <meta name="twitter:creator" content="@studio_sub">
+        <meta name="twitter:site" content="@flamingosholbox">
+        <meta name="twitter:image" content="https://villasflamingos.com/img/logo.jpg">
+        
+        <meta property="og:title" content="Villas Flamingos" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://villasflamingos.com/" />
+        <meta property="og:image" content="https://villasflamingos.com/img/logo.jpg" />
+        <meta property="og:description" content="Villas Flamingos, un lugar donde la naturaleza se manifiesta." />-->
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet"> 
+
+	<link rel="preload" href="src/css/style.scss" as="style" >
 	<link rel="stylesheet" type="text/css" href="src/css/style.scss">
+
+  	<link rel="preload" href="src/script/app.js" as="script">
+  	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" as="script">
+  	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js" as="script">
+
 </head>
 <body>
 	<div id="canvasBackground"><canvas id="paintonme"></canvas></div>
@@ -162,7 +244,6 @@
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
-	<script type="text/javascript" src="src/script/files/helpers.js"></script>
 	<script type="text/javascript" src="src/script/app.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 class MenuServicios{
-    constructor(liElements,liText,swiperArea){
+    constructor(liElements,liText,swiperArea,box){
         this.isMobile = this.mobileCheck();
         this.xDown  =  null;
         this.swiperArea = typeof(swiperArea) === 'string' ? document.querySelector(swiperArea) : swiperArea;
@@ -14,8 +14,27 @@ class MenuServicios{
         this.start = -this.slice;
         this.dragX = 0;
         this.xDown = null;
+
+        this.boxes = [...box];
+        this.options = {root: null,rootMargin: '10px',threshold:.6}
+        this.observer;
+
         this.init();
         window.addEventListener('resize',function(){this.setMenu()}.bind(this),false);  
+    }
+
+    setInViewStyles = (target) => {target.classList.add('is-inview')}
+    setOutOfViewStyles = (target) => {
+        if(!target.classList.contains('is-inview')){
+            target.classList.remove('is-inview')
+        }
+    }
+
+    onIntersect = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {return this.setInViewStyles(entry.target)}
+            return this.setOutOfViewStyles(entry.target)
+        })
     }
 
     setMenu = () =>{
@@ -40,6 +59,7 @@ class MenuServicios{
         if(this.wasRight) this.setLeft();
         else this.setRight();
       }
+      for(let box of this.boxes){box.classList.remove('is-inview')}
       this.rotateMenu();
       return
     }
@@ -126,6 +146,9 @@ class MenuServicios{
     }
 
     init = () =>{
+      this.observer = new IntersectionObserver(this.onIntersect, this.options);
+      this.boxes.forEach(el => {this.observer.observe(el)})
+
         this.initMenu();
         this.rotateMenu();
         setTimeout(()=>{

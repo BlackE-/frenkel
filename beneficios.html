@@ -2,10 +2,22 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
+	<title>Frenkel</title>
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0">
-	<title>Beneficios</title>
-	<link rel="preload" as="style" href="src/css/style.scss">
+	<meta name="description" content="Frenkel - Transformacion 4.0">
+	<meta name="author" content="Studio SUB">
+	<!-- <link rel="author" href="https://villasflamingos.com/humans.txt" /> -->
+	<!-- <link rel="icon" type="image/jpg" href="https://villasflamingos.com/img/favicon.jpg"> -->
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet"> 
+
+	<link rel="preload" href="src/css/style.scss" as="style" >
 	<link rel="stylesheet" type="text/css" href="src/css/style.scss">
+
+  	<link rel="preload" href="src/script/app.js" as="script">
+  	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" as="script">
+  	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js" as="script">
 </head>
 <body>
 	<div id="canvasBackground"><canvas id="paintonme"></canvas></div>
@@ -56,30 +68,75 @@
 							</div>
 							<div class="containerBeneficios" id="select_content">
 								<section id="content_1" class="active">
-									<div>
+									<div class="boxFirst">
 										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
 										<p><b>Analizamos la planta en su totalidad</b> para ayudarte a mejorar sus procesos productivos y producto final.</p>
 									</div>
-									<div>
+									<div class="box">
 										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
 										<p><b>Detectamos</b> en dónde están faltando datos, en que parte se cortan los flujos de información y <b>cuándo se toman decisiones antes de tener los datos correctos.</b></p>
 									</div>
-									<div>
+									<div class="box">
 										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
 										<p>Estos datos <b>nos permiten detectar oportunidades e implementar soluciones</b> que resultan en la disminución de mermas e incremento de la productividad tanto de la maquinaria como del personal.</p>
 									</div>
 								</section>
 								<section id="content_2">
-									<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
-									<p>Detectamos en dónde están faltando datos, en que parte se cortan los flujos de información y cuándo se toman decisiones antes de tener los datos correctos.</p>
+									<div class="boxFirst">
+										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
+										<p>Detectamos en dónde están faltando datos, en que parte se cortan los flujos de información y cuándo se toman decisiones antes de tener los datos correctos.</p>
+									</div>
+
+									<div class="box">
+										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
+										<p><b>Analizamos la planta en su totalidad</b> para ayudarte a mejorar sus procesos productivos y producto final.</p>
+									</div>
+									<div class="box">
+										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
+										<p><b>Detectamos</b> en dónde están faltando datos, en que parte se cortan los flujos de información y <b>cuándo se toman decisiones antes de tener los datos correctos.</b></p>
+									</div>
+									<div class="box">
+										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
+										<p>Estos datos <b>nos permiten detectar oportunidades e implementar soluciones</b> que resultan en la disminución de mermas e incremento de la productividad tanto de la maquinaria como del personal.</p>
+									</div>
 								</section>
 								<section id="content_3">
-									<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
-									<p><b>Disminución de errores</p>
+									<div class="boxFirst">
+										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
+										<p><b>Disminución de errores</b></p>
+									</div>
+
+									<div class="box">
+										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
+										<p><b>Analizamos la planta en su totalidad</b> para ayudarte a mejorar sus procesos productivos y producto final.</p>
+									</div>
+									<div class="box">
+										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
+										<p><b>Detectamos</b> en dónde están faltando datos, en que parte se cortan los flujos de información y <b>cuándo se toman decisiones antes de tener los datos correctos.</b></p>
+									</div>
+									<div class="box">
+										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
+										<p>Estos datos <b>nos permiten detectar oportunidades e implementar soluciones</b> que resultan en la disminución de mermas e incremento de la productividad tanto de la maquinaria como del personal.</p>
+									</div>
 								</section>
 								<section id="content_4">
-									<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
-									<p><b>Mejorar la comunicación de mi empresa</p>
+									<div class="boxFirst">
+										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
+										<p><b>Mejorar la comunicación de mi empresa</b></p>
+									</div>
+
+									<div class="box">
+										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
+										<p><b>Analizamos la planta en su totalidad</b> para ayudarte a mejorar sus procesos productivos y producto final.</p>
+									</div>
+									<div class="box">
+										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
+										<p><b>Detectamos</b> en dónde están faltando datos, en que parte se cortan los flujos de información y <b>cuándo se toman decisiones antes de tener los datos correctos.</b></p>
+									</div>
+									<div class="box">
+										<img src="src/assets/FRK-beneficios.png" alt="beneficios" loading="lazy"/>
+										<p>Estos datos <b>nos permiten detectar oportunidades e implementar soluciones</b> que resultan en la disminución de mermas e incremento de la productividad tanto de la maquinaria como del personal.</p>
+									</div>
 								</section>
 							</div>
 						</div>
@@ -114,7 +171,6 @@
 	</div>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
-	<script type="text/javascript" src="src/script/files/helpers.js"></script>
 	<script type="text/javascript" src="src/script/app.js"></script>
 </body>
 </html>

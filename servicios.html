@@ -2,10 +2,22 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, minimum-scale=1.0,user-scalable=no">
-	<title>Servicios</title>
-	<link rel="preload" as="style" href="src/css/style.scss">
+	<title>Frenkel</title>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+	<meta name="description" content="Frenkel - Transformacion 4.0">
+	<meta name="author" content="Studio SUB">
+	<!-- <link rel="author" href="https://villasflamingos.com/humans.txt" /> -->
+	<!-- <link rel="icon" type="image/jpg" href="https://villasflamingos.com/img/favicon.jpg"> -->
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet"> 
+
+	<link rel="preload" href="src/css/style.scss" as="style">
 	<link rel="stylesheet" type="text/css" href="src/css/style.scss">
+
+  	<link rel="preload" href="src/script/app.js" as="script">
+  	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" as="script">
+  	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js" as="script">
 </head>
 <body>
 	<div id="canvasBackground"><canvas id="paintonme"></canvas></div>
@@ -45,16 +57,16 @@
 								<h1 class="titleServicios">Servicios</h1>
 							    <div id="containerMenu">
 							      <ul id="ulMenu" class="circle-container load">
-							          <li id="0" style="transform: rotate(-90deg) translate(15em) rotate(90deg);">
+							          <li id="0" name="li0">
 							             <img src="src/assets/icons/servicios-it_software.svg">
 							          </li>
-							          <li id="1" style="transform: rotate(0deg) translate(15em) rotate(0deg);">
+							          <li id="1" name="li1">
 							            <img src="src/assets/icons/servicios-it_software.svg">
 							          </li>
-							          <li id="2" style="transform: rotate(90deg) translate(15em) rotate(-90deg);">
+							          <li id="2" name="li2">
 							             <img src="src/assets/icons/servicios-it_software.svg">
 							          </li>
-							          <li id="3" style="transform: rotate(180deg) translate(15em) rotate(-180deg);">
+							          <li id="3" name="li3">
 							             <img src="src/assets/icons/servicios-it_software.svg">
 							          </li>
 							      </ul>
@@ -69,42 +81,45 @@
 						          	<p><b>CiberSeguridad</b></p>
 						          	<div class="separator"></div>
 
-						          	<span><img src="src/assets/icons/servicio2.png" alt="servicios2"/></span>
-						          	<p><b>IoT / Big Data:</b></p>
-						          	<p>Connected Products, Product Data,CX Apps, Connected Experience</p>
-						          	<div class="separator"></div>
-
-						          	<span><img src="src/assets/icons/servicio3.png" alt="servicios3"/></span>
-						          	<p><b>Bussiness Intelligence:</b></p>
-						          	<p>Operational & Analytical, Planning & Forecasting</p>
-						          	<div class="separator"></div>
-
-
-						          	<span><img src="src/assets/icons/servicio4.png" alt="servicios4"/></span>
-						          	<p><b>Quality of service</b></p>
-						          	<p>(QoS)</p>
-						          	<div class="separator"></div>
-
-
-						          	<span><img src="src/assets/icons/servicio5.png" alt="servicios5"/></span>
-						          	<p><b>Sistemas MES</b></p>
-						          	<p>(Manifacturing Execution System)</p>
-						          	<div class="separator"></div>
-
-
-						          	<span><img src="src/assets/icons/servicio6.png" alt="servicios6"/></span>
-						          	<p><b>Voz, video y telepresencia</b></p>
-						          	<div class="separator"></div>
-
-
-						          	<span><img src="src/assets/icons/servicio7.png" alt="servicios7"/></span>
-						          	<p><b>WEB & APPS</b></p>
-						          	<p>(iOS & Android, Only Code, WEB Services and Real Time)</p>
-						          	<div class="separator"></div>
-
-						          	<span><img src="src/assets/icons/servicio8.png" alt="servicios8"/></span>
-						          	<p><b>Smart Homes</b></p>
-
+						          	<div class="box">
+							          	<span><img src="src/assets/icons/servicio2.png" alt="servicios2"/></span>
+							          	<p><b>IoT / Big Data:</b></p>
+							          	<p>Connected Products, Product Data,CX Apps, Connected Experience</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio3.png" alt="servicios3"/></span>
+							          	<p><b>Bussiness Intelligence:</b></p>
+							          	<p>Operational & Analytical, Planning & Forecasting</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio4.png" alt="servicios4"/></span>
+							          	<p><b>Quality of service</b></p>
+							          	<p>(QoS)</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio5.png" alt="servicios5"/></span>
+							          	<p><b>Sistemas MES</b></p>
+							          	<p>(Manifacturing Execution System)</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio6.png" alt="servicios6"/></span>
+							          	<p><b>Voz, video y telepresencia</b></p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio7.png" alt="servicios7"/></span>
+							          	<p><b>WEB & APPS</b></p>
+							          	<p>(iOS & Android, Only Code, WEB Services and Real Time)</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio8.png" alt="servicios8"/></span>
+							          	<p><b>Smart Homes</b></p>
+							        </div>
 						        </section>
 						      </li>
 						      <li>
@@ -115,42 +130,45 @@
 						          	<p><b>CiberSeguridad</b></p>
 						          	<div class="separator"></div>
 
-						          	<span><img src="src/assets/icons/servicio2.png" alt="servicios2"/></span>
-						          	<p><b>IoT / Big Data:</b></p>
-						          	<p>Connected Products, Product Data,CX Apps, Connected Experience</p>
-						          	<div class="separator"></div>
-
-						          	<span><img src="src/assets/icons/servicio3.png" alt="servicios3"/></span>
-						          	<p><b>Bussiness Intelligence:</b></p>
-						          	<p>Operational & Analytical, Planning & Forecasting</p>
-						          	<div class="separator"></div>
-
-
-						          	<span><img src="src/assets/icons/servicio4.png" alt="servicios4"/></span>
-						          	<p><b>Quality of service</b></p>
-						          	<p>(QoS)</p>
-						          	<div class="separator"></div>
-
-
-						          	<span><img src="src/assets/icons/servicio5.png" alt="servicios5"/></span>
-						          	<p><b>Sistemas MES</b></p>
-						          	<p>(Manifacturing Execution System)</p>
-						          	<div class="separator"></div>
-
-
-						          	<span><img src="src/assets/icons/servicio6.png" alt="servicios6"/></span>
-						          	<p><b>Voz, video y telepresencia</b></p>
-						          	<div class="separator"></div>
-
-
-						          	<span><img src="src/assets/icons/servicio7.png" alt="servicios7"/></span>
-						          	<p><b>WEB & APPS</b></p>
-						          	<p>(iOS & Android, Only Code, WEB Services and Real Time)</p>
-						          	<div class="separator"></div>
-
-						          	<span><img src="src/assets/icons/servicio8.png" alt="servicios8"/></span>
-						          	<p><b>Smart Homes</b></p>
-
+						          	<div class="box">
+							          	<span><img src="src/assets/icons/servicio2.png" alt="servicios2"/></span>
+							          	<p><b>IoT / Big Data:</b></p>
+							          	<p>Connected Products, Product Data,CX Apps, Connected Experience</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio3.png" alt="servicios3"/></span>
+							          	<p><b>Bussiness Intelligence:</b></p>
+							          	<p>Operational & Analytical, Planning & Forecasting</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio4.png" alt="servicios4"/></span>
+							          	<p><b>Quality of service</b></p>
+							          	<p>(QoS)</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio5.png" alt="servicios5"/></span>
+							          	<p><b>Sistemas MES</b></p>
+							          	<p>(Manifacturing Execution System)</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio6.png" alt="servicios6"/></span>
+							          	<p><b>Voz, video y telepresencia</b></p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio7.png" alt="servicios7"/></span>
+							          	<p><b>WEB & APPS</b></p>
+							          	<p>(iOS & Android, Only Code, WEB Services and Real Time)</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio8.png" alt="servicios8"/></span>
+							          	<p><b>Smart Homes</b></p>
+							        </div>
 
 						        </section>
 						      </li>
@@ -162,42 +180,45 @@
 						          	<p><b>CiberSeguridad</b></p>
 						          	<div class="separator"></div>
 
-						          	<span><img src="src/assets/icons/servicio2.png" alt="servicios2"/></span>
-						          	<p><b>IoT / Big Data:</b></p>
-						          	<p>Connected Products, Product Data,CX Apps, Connected Experience</p>
-						          	<div class="separator"></div>
-
-						          	<span><img src="src/assets/icons/servicio3.png" alt="servicios3"/></span>
-						          	<p><b>Bussiness Intelligence:</b></p>
-						          	<p>Operational & Analytical, Planning & Forecasting</p>
-						          	<div class="separator"></div>
-
-
-						          	<span><img src="src/assets/icons/servicio4.png" alt="servicios4"/></span>
-						          	<p><b>Quality of service</b></p>
-						          	<p>(QoS)</p>
-						          	<div class="separator"></div>
-
-
-						          	<span><img src="src/assets/icons/servicio5.png" alt="servicios5"/></span>
-						          	<p><b>Sistemas MES</b></p>
-						          	<p>(Manifacturing Execution System)</p>
-						          	<div class="separator"></div>
-
-
-						          	<span><img src="src/assets/icons/servicio6.png" alt="servicios6"/></span>
-						          	<p><b>Voz, video y telepresencia</b></p>
-						          	<div class="separator"></div>
-
-
-						          	<span><img src="src/assets/icons/servicio7.png" alt="servicios7"/></span>
-						          	<p><b>WEB & APPS</b></p>
-						          	<p>(iOS & Android, Only Code, WEB Services and Real Time)</p>
-						          	<div class="separator"></div>
-
-						          	<span><img src="src/assets/icons/servicio8.png" alt="servicios8"/></span>
-						          	<p><b>Smart Homes</b></p>
-
+						          	<div class="box">
+							          	<span><img src="src/assets/icons/servicio2.png" alt="servicios2"/></span>
+							          	<p><b>IoT / Big Data:</b></p>
+							          	<p>Connected Products, Product Data,CX Apps, Connected Experience</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio3.png" alt="servicios3"/></span>
+							          	<p><b>Bussiness Intelligence:</b></p>
+							          	<p>Operational & Analytical, Planning & Forecasting</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio4.png" alt="servicios4"/></span>
+							          	<p><b>Quality of service</b></p>
+							          	<p>(QoS)</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio5.png" alt="servicios5"/></span>
+							          	<p><b>Sistemas MES</b></p>
+							          	<p>(Manifacturing Execution System)</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio6.png" alt="servicios6"/></span>
+							          	<p><b>Voz, video y telepresencia</b></p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio7.png" alt="servicios7"/></span>
+							          	<p><b>WEB & APPS</b></p>
+							          	<p>(iOS & Android, Only Code, WEB Services and Real Time)</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio8.png" alt="servicios8"/></span>
+							          	<p><b>Smart Homes</b></p>
+							        </div>
 						        </section>
 						      </li>
 						      <li>
@@ -208,41 +229,45 @@
 						          	<p><b>CiberSeguridad</b></p>
 						          	<div class="separator"></div>
 
-						          	<span><img src="src/assets/icons/servicio2.png" alt="servicios2"/></span>
-						          	<p><b>IoT / Big Data:</b></p>
-						          	<p>Connected Products, Product Data,CX Apps, Connected Experience</p>
-						          	<div class="separator"></div>
-
-						          	<span><img src="src/assets/icons/servicio3.png" alt="servicios3"/></span>
-						          	<p><b>Bussiness Intelligence:</b></p>
-						          	<p>Operational & Analytical, Planning & Forecasting</p>
-						          	<div class="separator"></div>
-
-
-						          	<span><img src="src/assets/icons/servicio4.png" alt="servicios4"/></span>
-						          	<p><b>Quality of service</b></p>
-						          	<p>(QoS)</p>
-						          	<div class="separator"></div>
-
-
-						          	<span><img src="src/assets/icons/servicio5.png" alt="servicios5"/></span>
-						          	<p><b>Sistemas MES</b></p>
-						          	<p>(Manifacturing Execution System)</p>
-						          	<div class="separator"></div>
-
-
-						          	<span><img src="src/assets/icons/servicio6.png" alt="servicios6"/></span>
-						          	<p><b>Voz, video y telepresencia</b></p>
-						          	<div class="separator"></div>
-
-
-						          	<span><img src="src/assets/icons/servicio7.png" alt="servicios7"/></span>
-						          	<p><b>WEB & APPS</b></p>
-						          	<p>(iOS & Android, Only Code, WEB Services and Real Time)</p>
-						          	<div class="separator"></div>
-
-						          	<span><img src="src/assets/icons/servicio8.png" alt="servicios8"/></span>
-						          	<p><b>Smart Homes</b></p>
+						          	<div class="box">
+							          	<span><img src="src/assets/icons/servicio2.png" alt="servicios2"/></span>
+							          	<p><b>IoT / Big Data:</b></p>
+							          	<p>Connected Products, Product Data,CX Apps, Connected Experience</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio3.png" alt="servicios3"/></span>
+							          	<p><b>Bussiness Intelligence:</b></p>
+							          	<p>Operational & Analytical, Planning & Forecasting</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio4.png" alt="servicios4"/></span>
+							          	<p><b>Quality of service</b></p>
+							          	<p>(QoS)</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio5.png" alt="servicios5"/></span>
+							          	<p><b>Sistemas MES</b></p>
+							          	<p>(Manifacturing Execution System)</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio6.png" alt="servicios6"/></span>
+							          	<p><b>Voz, video y telepresencia</b></p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio7.png" alt="servicios7"/></span>
+							          	<p><b>WEB & APPS</b></p>
+							          	<p>(iOS & Android, Only Code, WEB Services and Real Time)</p>
+							          	<div class="separator"></div>
+							        </div>
+							        <div class="box">
+							          	<span><img src="src/assets/icons/servicio8.png" alt="servicios8"/></span>
+							          	<p><b>Smart Homes</b></p>
+							        </div>
 						        </section>
 						      </li>
 						    </ul>
@@ -276,7 +301,6 @@
 	</div>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
-	<script type="text/javascript" src="src/script/files/helpers.js"></script>
 	<script type="text/javascript" src="src/script/app.js"></script>
 </body>
 </html>
