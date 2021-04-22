@@ -21,7 +21,6 @@
 
       setHeight() {
         setTimeout(()=>{document.body.style.height = `${this.dom.content.clientHeight}px`;},500);
-        // document.body.style.height = `${this.dom.content.offsetHeight}px`;
       }
 
       resize() {
@@ -32,13 +31,10 @@
 
       scroll() {
         if(!this.hasReachBottom){
-          let scrollHeight = document.clientHeight;
-          let scrollPosition = window.innerHeight + window.scrollTop;
-          if ((scrollHeight - scrollPosition) / scrollHeight != 0) {
-              // when scroll to bottom of the page
+         if (document.body.style.height == this.dom.content.clientHeight) {
               this.hasReachBottom = true;
-              this.setHeight();
           }
+          this.setHeight();
         }
     
         this.data.current = window.scrollY;
