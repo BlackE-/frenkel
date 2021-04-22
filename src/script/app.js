@@ -3,6 +3,7 @@ import Highway from '@dogstudio/highway';
 import Fade from './fade.js';
 import Expand from './expand.js';
 // import SmoothScroll from './scroll.js';
+import SmoothScroll from './smoothScroll.js';
 import Drawing from './drawing.js';
 import Animations from './animations.js';
 
@@ -68,4 +69,6 @@ const setWhite 	= () => {_draw.setBackground('rgb(233, 233, 233)');}
 	// maximusContainer.classList.add('scroll');
 	// document.getElementById('scrollContainer').classList.add('scroll');
 // }
+
+const _scroll = new SmoothScroll();
 checkLinkAnimations(window.location.href);

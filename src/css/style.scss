@@ -72,7 +72,7 @@ header input + label{position: absolute;top:20px;right:20px;z-index: 501;}
     background: var(--second-color);
     ul li a{ color:var(--white-color); &.active{color:var(--first-color);}}
   }
-  .sectionFirst{margin-top:70px;}
+  /*.sectionFirst{margin-top:70px;}*/
   .logoHeaderContainer{background: var(--second-color);position:absolute;margin-bottom: 70px;z-index: 2;top:0; }
 }
 
@@ -293,7 +293,7 @@ hr{background:#818181;margin:50px 20px 0 20px;border: 0;height: 1px;}
 /*  SERVICIOS */
 #containerMenu{position: absolute;touch-action: none;border: 3px solid #eabe97;
 	border-radius: 50%;z-index: 0;width: 490px;height: 500px;top: -180px;left: calc(50% - 255px);}
-.titleServicios{margin:0 auto;text-align: center;color:#fff;padding-bottom: 40vh;}
+.titleServicios{margin:0 auto;text-align: center;color:#fff;padding: 10vh 0 40vh 0;}
 ul#ulMenu{position: relative;top: 200px;left:calc(50% - 45px);list-style: none;padding: 0;width: 0px;
   li{position: absolute;z-index:10;width:80px;height: 80px;border-radius: 50%;background:#e9ba91;border:3px solid #d37522;display: grid;align-items: center;transform-origin: 50%;-webkit-transition: 500ms ease-in-out;-moz-transition: 500ms ease-in-out;transition: 500ms ease-in-out;
     img{width:50%;margin:0 auto;opacity: 0;}

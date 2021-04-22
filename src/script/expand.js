@@ -15,11 +15,10 @@ class Expand extends Highway.Transition {
     let dialog = document.getElementById(`${triggerLink}Dialog`);
     dialog.style.width = `${btn.width}px`;
     dialog.style.height = `${btn.height}px`;
-    dialog.style.top = `${btn.top}px`;
+    dialog.style.top = `${btn.top + window.scrollY}px`;
     dialog.style.left = `${btn.left}px`;
     dialog.classList.add('clicked');
-    
-    
+
     setTimeout(()=>{window.scrollTo(0, 0);},2000);
     setTimeout(()=>{done();},3000);
   }
