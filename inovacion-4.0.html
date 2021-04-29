@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Frenkel</title>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+	<meta name="description" content="Frenkel - Transformacion 4.0">
+	<meta name="author" content="Studio SUB">
+	<!-- 
+
+	<link rel="author" href="https://villasflamingos.com/humans.txt" />
+	<link rel="icon" type="image/jpg" href="https://villasflamingos.com/img/favicon.jpg">
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/img/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/img/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/img/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+	-->
+        
+        <!-- <script type="application/ld+json">
+            {
+                  "@context": {
+                    "name": "http://schema.org/name",
+                    "description": "http://schema.org/description",     
+                    "image": {
+                      "@id": "http://schema.org/image",
+                      "@type": "@id"
+                    },
+                    "geo": "http://schema.org/geo",
+                    "latitude": {
+                      "@id": "http://schema.org/latitude",
+                      "@type": "xsd:float"
+                    },
+                    "longitude": {
+                      "@id": "http://schema.org/longitude",
+                      "@type": "xsd:float"
+                    },
+                    "xsd": "http://www.w3.org/2001/XMLSchema#"
+                  },
+                  "@type": "Hotel",
+                  "name": "Villas Flamingos",
+                  "description": "Villas Flamingos, un lugar donde la naturaleza se manifiesta.",
+                  "image": "https://villasflamingos.com/img/logo.jpg",
+                  "geo": {
+                    "latitude": "21.532668",
+                    "longitude": "-87.366205"
+                  }
+                }
+        </script> -->
+
+        
+        <!-- Twitter Card data 
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Villas Flamingos">
+        <meta name="twitter:description" content="Villas Flamingos, un lugar donde la naturaleza se manifiesta.">
+        <meta name="twitter:creator" content="@studio_sub">
+        <meta name="twitter:site" content="@flamingosholbox">
+        <meta name="twitter:image" content="https://villasflamingos.com/img/logo.jpg">
+        
+        <meta property="og:title" content="Villas Flamingos" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://villasflamingos.com/" />
+        <meta property="og:image" content="https://villasflamingos.com/img/logo.jpg" />
+        <meta property="og:description" content="Villas Flamingos, un lugar donde la naturaleza se manifiesta." />-->
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet"> 
+
+	<link rel="preload" href="src/css/style.scss" as="style" >
+	<link rel="stylesheet" type="text/css" href="src/css/style.scss">
+
+  	<link rel="preload" href="src/script/app.js" as="script">
+  	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" as="script">
+  	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js" as="script">
+
+</head>
+<body>
+	<div id="canvasBackground"><canvas id="paintonme"></canvas></div>
+	<div class="whatsappContainer">
+						<a href="#" target="_blank">
+							<img src="src/assets/icons/FRK-whatsapp.svg" loading="lazy"/>
+						</a>
+					</div>
+	<div id="maximusContainer" data-scroll="data-scroll">
+		<div id="scrollContainer" data-scroll-content="data-scroll-content">
+			<header>
+				<input type="checkbox" name="menu" id="menuHamburguer" />
+				<label for="menuHamburguer">
+					<div class="hamburguer load" id="nav-icon2">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<div id="containerSpan6"><span></span></div>
+						<div id="containerSpan7"><span></span></div>
+						<div id="containerSpan8"><span></span></div>
+						<div id="containerSpan9"><span></span></div>
+					</div>
+				</label>
+				<nav id="nav">
+					<ul id="navUl">
+						<li><a href="index.html" ><span>NOSOTROS</span></a></li>
+						<li><a href="beneficios.html"><span>BENEFICIOS</span></a></li>
+						<li><a href="servicios.html"><span>SERVICIOS</span></a></li>
+						<li><a href="inovacion-4.0.html" class="active"><span>INOVACIÓN 4.0</span></a></li>
+						<li><a href="capacitacion.html"><span>CAPACITACIÓN</span></a></li>
+					</ul>
+				</nav>
+			</header>
+			<main id="main" data-router-wrapper>
+				<section data-router-view="inovacion" class="sectionView">
+					<div class="logoHeaderContainer">
+						<a class="logoHeader" href="index.html">
+							<img src="src/assets/frenkel-logo.svg" loading="lazy" alt="Frenkel-logo"/>
+						</a>
+					</div>
+					<div class="sectionFirst" id="inovacionSection">
+						<div class="container">
+							<div>
+								<p>Contamos con un equipo multidisciplinario dedicado a desarrollar  aplicaciones y tecnología propia aplicable para cualquier industria.</p>
+							</div>
+							<div>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.27 28.49"><title>FRK-innovacion</title>
+									<path class="path1" d="M29.93,8a.46.46,0,0,0-.39.44,5.49,5.49,0,0,1-.42,1.93.46.46,0,0,0,.2.59l1.08.6-.62,1L28.6,12A.47.47,0,0,0,28,12a5.82,5.82,0,0,1-1.61,1.21.47.47,0,0,0-.22.58L26.63,15l-1.19.42L25,14.15a.47.47,0,0,0-.44-.3h-.06l-.16,0a5.32,5.32,0,0,1-1.89-.07.46.46,0,0,0-.53.29l-.43,1.15-1.19-.42.46-1.21a.47.47,0,0,0-.19-.56A5.85,5.85,0,0,1,19,11.71a.47.47,0,0,0-.59-.11l-1.12.63-.62-1,1.17-.66A.47.47,0,0,0,18.1,10a5.4,5.4,0,0,1-.31-1.73.35.35,0,0,1,0-.06c0-.05,0-.1,0-.15a.47.47,0,0,0-.39-.48l-1.25-.21.21-1.18,1.33.23a.46.46,0,0,0,.51-.28,5.68,5.68,0,0,1,1.1-1.67.46.46,0,0,0,0-.62l-.81-.93,1-.78.88,1a.47.47,0,0,0,.56.11,5.93,5.93,0,0,1,1.94-.6.46.46,0,0,0,.4-.46V.93h1.27V2.22a.46.46,0,0,0,.37.46,5.94,5.94,0,0,1,1.9.76.47.47,0,0,0,.59-.09l.82-.95,1,.78-.86,1a.47.47,0,0,0,0,.6,5.59,5.59,0,0,1,.94,1.74.47.47,0,0,0,.52.31l1.27-.22.21,1.18Zm2-2a.46.46,0,0,0-.54-.37L30,5.84a6.53,6.53,0,0,0-.73-1.34l.93-1.08a.46.46,0,0,0-.06-.66L28.47,1.39a.46.46,0,0,0-.64.06l-.87,1a6.86,6.86,0,0,0-1.47-.59V.47A.46.46,0,0,0,25,0h-2.2a.46.46,0,0,0-.46.47v1.3a6.86,6.86,0,0,0-1.51.47L19.9,1.15a.47.47,0,0,0-.65-.06L17.57,2.46a.46.46,0,0,0-.17.32.47.47,0,0,0,.11.35l.86,1a6.67,6.67,0,0,0-.84,1.29L16.1,5.15a.47.47,0,0,0-.54.38l-.38,2.09a.47.47,0,0,0,.38.54l1.3.22a6.1,6.1,0,0,0,.24,1.5l-1.26.71a.46.46,0,0,0-.17.64l1.1,1.84a.47.47,0,0,0,.63.17l1.18-.66a6.86,6.86,0,0,0,1.17,1l-.49,1.31a.46.46,0,0,0,.28.6l2.06.73a.47.47,0,0,0,.59-.27l.45-1.21a6,6,0,0,0,1.6,0l.5,1.32a.46.46,0,0,0,.43.3.43.43,0,0,0,.15,0l2.07-.73a.47.47,0,0,0,.27-.24.46.46,0,0,0,0-.36l-.46-1.22a6.68,6.68,0,0,0,1.24-.94l1.27.71a.47.47,0,0,0,.63-.17l1.1-1.84a.46.46,0,0,0,0-.36.47.47,0,0,0-.22-.29l-1.14-.64a6.39,6.39,0,0,0,.31-1.49l1.43-.24a.47.47,0,0,0,.38-.54Z" style="fill:#d37522"/>
+									<path class="path2" d="M14.7,20l-1.21-.59a.47.47,0,0,0-.57.12l-.08.1a4.7,4.7,0,0,1-.44.5,6.05,6.05,0,0,1-1,.74.47.47,0,0,0-.19.58l.47,1.12-1.16.5L10,21.91a.47.47,0,0,0-.52-.27,6,6,0,0,1-2,0A.47.47,0,0,0,7,22l-.38,1.21L5.4,22.86l.4-1.27A.46.46,0,0,0,5.58,21,5.55,5.55,0,0,1,4.16,20l0,0L4,19.82a.47.47,0,0,0-.6-.09l-1.07.69-.66-1,1.12-.73A.46.46,0,0,0,3,18.13a5.58,5.58,0,0,1-.35-2,.46.46,0,0,0-.41-.46L1,15.58l.16-1.21,1.35.15a.46.46,0,0,0,.49-.3,5.82,5.82,0,0,1,1-1.75.47.47,0,0,0,0-.62L3.12,11,4,10.1l.9.95a.46.46,0,0,0,.58.08,5.91,5.91,0,0,1,1.91-.72.47.47,0,0,0,.37-.48L7.74,8.68,9,8.6,9,9.92a.46.46,0,0,0,.4.44,5.74,5.74,0,0,1,1.9.63.46.46,0,0,0,.59-.13l.78-1,1,.72-.81,1.06a.46.46,0,0,0,0,.59,5.44,5.44,0,0,1,1,1.69.47.47,0,0,0,.54.29l1.22-.29L16,15.09l-1.32.31a.46.46,0,0,0-.36.46,5.73,5.73,0,0,1-.34,2,.46.46,0,0,0,.23.57l1.11.55Zm1.41-1.72-1.18-.58a6.6,6.6,0,0,0,.26-1.52l1.42-.34a.46.46,0,0,0,.35-.56l-.47-2.09a.46.46,0,0,0-.21-.29.46.46,0,0,0-.35-.06l-1.29.31a6.34,6.34,0,0,0-.8-1.3l.87-1.14a.47.47,0,0,0,.09-.35.46.46,0,0,0-.18-.31L12.88,8.83a.46.46,0,0,0-.65.09L11.42,10a6.63,6.63,0,0,0-1.47-.49L9.88,8.09a.46.46,0,0,0-.15-.33.46.46,0,0,0-.34-.12l-2.17.14a.46.46,0,0,0-.43.48l.06,1.31a6.94,6.94,0,0,0-1.49.57l-1-1a.46.46,0,0,0-.65,0l-1.6,1.48a.46.46,0,0,0,0,.66l.9.95a6.79,6.79,0,0,0-.77,1.36L.8,13.4a.47.47,0,0,0-.51.4L0,15.93a.46.46,0,0,0,.41.52l1.31.14A6.52,6.52,0,0,0,2,18.11l-1.21.78a.46.46,0,0,0-.14.65l1.17,1.78a.46.46,0,0,0,.64.14l1.11-.72a6.29,6.29,0,0,0,1.22.94L4.37,23a.46.46,0,0,0,.31.59l2.08.61.13,0a.47.47,0,0,0,.44-.32l.4-1.27a6.86,6.86,0,0,0,1.57,0l.55,1.29a.47.47,0,0,0,.26.25.47.47,0,0,0,.36,0l2-.86a.47.47,0,0,0,.24-.61l-.5-1.18a6.83,6.83,0,0,0,.81-.64,4.7,4.7,0,0,0,.38-.4l1.28.63a.47.47,0,0,0,.62-.2l1-1.93a.46.46,0,0,0,0-.36.47.47,0,0,0-.24-.28Z" style="fill:#d37522"/>
+									<path class="path3" d="M26.25,22.39a.46.46,0,0,0-.36.46,3.59,3.59,0,0,1-.21,1.23.46.46,0,0,0,.23.57l.58.28-.23.44L25.62,25a.47.47,0,0,0-.56.12l-.06.07a3.12,3.12,0,0,1-.27.3,3.73,3.73,0,0,1-.63.47.46.46,0,0,0-.19.58l.25.59-.46.2-.27-.64a.47.47,0,0,0-.52-.27,3.79,3.79,0,0,1-1.27,0,.47.47,0,0,0-.51.32l-.2.64-.47-.14.21-.67a.47.47,0,0,0-.22-.55,3.36,3.36,0,0,1-.89-.67l-.08-.1a.47.47,0,0,0-.6-.08l-.57.36-.26-.39.6-.39a.46.46,0,0,0,.18-.56A3.49,3.49,0,0,1,18.61,23a.46.46,0,0,0-.41-.46l-.65-.07.06-.48.73.08a.46.46,0,0,0,.49-.3,3.66,3.66,0,0,1,.62-1.09.47.47,0,0,0,0-.62L19,19.64l.37-.34.48.5a.47.47,0,0,0,.58.08,3.76,3.76,0,0,1,1.2-.45.46.46,0,0,0,.37-.48l0-.65.49,0,0,.7a.47.47,0,0,0,.4.44,3.56,3.56,0,0,1,1.19.4.46.46,0,0,0,.59-.12l.41-.54.38.28L25,20a.46.46,0,0,0,0,.59,3.48,3.48,0,0,1,.65,1.06.46.46,0,0,0,.54.29l.64-.15.1.46Zm1.41-1.29a.47.47,0,0,0-.21-.29.48.48,0,0,0-.35-.06l-.72.17a4.56,4.56,0,0,0-.41-.67l.5-.65a.47.47,0,0,0-.09-.66l-1.13-.83a.47.47,0,0,0-.65.09l-.46.6a4.7,4.7,0,0,0-.75-.25l0-.8a.47.47,0,0,0-.49-.44l-1.42.09a.47.47,0,0,0-.44.49l0,.73a4.48,4.48,0,0,0-.77.29l-.55-.58a.46.46,0,0,0-.65,0l-1,1a.47.47,0,0,0,0,.66l.5.52a4.72,4.72,0,0,0-.39.7l-.83-.09a.46.46,0,0,0-.51.4l-.19,1.4a.47.47,0,0,0,.09.35.47.47,0,0,0,.32.18l.73.08a4.35,4.35,0,0,0,.14.77l-.69.45a.47.47,0,0,0-.2.3.47.47,0,0,0,.07.35l.77,1.17a.47.47,0,0,0,.64.14l.62-.4a4.2,4.2,0,0,0,.63.48l-.24.77a.46.46,0,0,0,.31.59l1.36.4.13,0a.47.47,0,0,0,.44-.33l.22-.71a4.65,4.65,0,0,0,.81,0l.31.73a.47.47,0,0,0,.26.25.46.46,0,0,0,.36,0L25,27.85a.47.47,0,0,0,.24-.61l-.28-.66a4.58,4.58,0,0,0,.44-.36l.18-.18.73.36a.47.47,0,0,0,.62-.2l.66-1.26a.47.47,0,0,0-.21-.63L26.68,24a4.71,4.71,0,0,0,.13-.78l.81-.19a.47.47,0,0,0,.35-.56Z" style="fill:#d37522"/>
+									<path d="M23.72,10.94a2.77,2.77,0,0,1-2.81-2.71,2.82,2.82,0,0,1,5.63,0,2.77,2.77,0,0,1-2.81,2.71m0-6.36A3.7,3.7,0,0,0,20,8.22a3.75,3.75,0,0,0,7.49,0,3.7,3.7,0,0,0-3.75-3.65" style="fill:#d37522"/>
+									<path d="M10.36,18a2.86,2.86,0,0,1-1.94.76,2.72,2.72,0,0,1-2-.85A2.65,2.65,0,0,1,5.69,16a2.77,2.77,0,0,1,.9-2,2.86,2.86,0,0,1,1.94-.76,2.72,2.72,0,0,1,2,.85A2.65,2.65,0,0,1,11.26,16a2.76,2.76,0,0,1-.9,2M8.54,12.31a3.79,3.79,0,0,0-2.58,1,3.68,3.68,0,0,0-1.2,2.6,3.57,3.57,0,0,0,1,2.59,3.64,3.64,0,0,0,2.67,1.14,3.78,3.78,0,0,0,2.58-1A3.69,3.69,0,0,0,12.19,16a3.56,3.56,0,0,0-1-2.59,3.64,3.64,0,0,0-2.67-1.14" style="fill:#d37522"/>
+									<path d="M23.39,24.1A1.72,1.72,0,0,1,21,24a1.57,1.57,0,0,1-.43-1.14,1.65,1.65,0,0,1,.54-1.16,1.71,1.71,0,0,1,1.17-.46,1.61,1.61,0,0,1,1.19.5,1.58,1.58,0,0,1,.43,1.14,1.67,1.67,0,0,1-.54,1.17m-1.08-3.74a2.63,2.63,0,0,0-1.8.71,2.57,2.57,0,0,0-.84,1.82,2.49,2.49,0,0,0,.69,1.81,2.54,2.54,0,0,0,1.86.8,2.63,2.63,0,0,0,1.79-.7A2.58,2.58,0,0,0,24.86,23a2.5,2.5,0,0,0-.69-1.81,2.54,2.54,0,0,0-1.86-.79" style="fill:#d37522"/>
+								</svg>
+							</div>
+							<div>
+								<p>Con base en un estudio realizado por nuestros consultores en las instalaciones del cliente, localizamos áreas de oportunidad para mejorar sus procesos, servicios y productos.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="awardsSection">
+						<div class="container">
+							<div class="imgContainer">
+								<img src="src/assets/icons/FRK-premio.svg" loading="lazy"/>
+							</div>
+							<p>En 2017 nuestra CTO Alicia Ramírez creó la primer patente de ﬁltros de placa automáticos del mundo.</p>
+						</div>
+					</div>
+
+					<div class="downloadSection">
+						<div class="container">
+							<p class="title">Descargue nuestros reportes</p>
+							<div class="filesContainer">
+								<a href="#" target="_blank">
+									<img src="src/assets/icons/FRK-archivo.svg" loading="lazy"/>
+									<p>“Industria 4.0 en México 2021”</p>
+								</a>
+								<a href="#" target="_blank">
+									<img src="src/assets/icons/FRK-archivo.svg" loading="lazy"/>
+									<p>“Automatizando un almacén” <br><sub>(caso de estudio)</sub></p>
+								</a>
+								<a href="#" target="_blank">
+									<img src="src/assets/icons/FRK-archivo.svg" loading="lazy"/>
+									<p>“Del e-commerce a la planta”</p>
+								</a>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="demoSection">
+						<div class="container">
+							<p class="title">Revise nuestros demos</p>
+							<div class="filesContainer">
+								<a href="#" target="_blank">
+									<img src="src/assets/icons/FRK-demo-cerveza.svg" loading="lazy"/>
+									<p>“Control de tanques de cerveza”</p>
+								</a>
+								<a href="#" target="_blank">
+									<img src="src/assets/icons/FRK-demo-azucar.svg" loading="lazy"/>
+									<p>“Control de silos de azucar”</p>
+								</a>
+								<a href="#" target="_blank">
+									<img src="src/assets/icons/FRK-demo-ecommerce.svg" loading="lazy"/>
+									<p>“E-commerce” <sub>(partnership con SUB)</sub></p>
+								</a>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="mailingSection">
+						<div class="container">
+							<p class="title">Suscríbase a nuestro mailing list para recibir nuestros demos y reportes</p>
+							<form id="mailingForm">
+								<input type="email" name="email" id="email">
+								<input type="submit" value="enviar" id="submit">
+							</form>
+						</div>
+					</div>
+
+					<div class="container"><hr></div>
+					<footer class="footer">
+						<div class="container">
+							<div class="footerText">
+								<img src="src/assets/Frenkel-logo.svg" loading="lazy" alt="Frenkel-logo"/>
+							</div>
+							<div class="footerText">
+								<p><a href="mailto:admon@frenkel.com.mx" target="_blank" data-router-disabled>admon@frenkel.com.mx</a></p>
+							</div>
+							<div class="footerText">
+								<p><a href="tel:+52 (55)1659-1804" target="_blank" data-router-disabled>+52 (55)1659-1804</a></p>
+								<p><a href="tel:+52 (55)1659-1801" target="_blank" data-router-disabled>+52 (55)1659-1801</a></p>
+							</div>
+							<div class="footerText">
+								<p><a href="https://goo.gl/maps/CtZQDCBTMGk4TYeV7" target="_blank">Fernando Ramírez 107, Col. Obrera,<br> CP. 06800, Cuauhtémoc, CDMX</a></p>
+							</div>
+							<div class="footerText">
+								<p><a href="#" target="_blank">Aviso de privacidad</a></p>
+								<p>©<span id="footerDate">2021</span>. Todos los derechos reservados</p>
+							</div>
+						</div>
+					</footer>
+				</section>
+			</main>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+	<script type="text/javascript" src="src/script/app.js"></script>
+</body>
+</html>

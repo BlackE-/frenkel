@@ -340,14 +340,73 @@ ul#ulText{text-align: center;list-style: none;padding:0;position: relative;width
 }
 
 
+#inovacionSection {padding:100px 0;
+  .container{display: grid;grid-template-rows:40% 20% 40%;max-width: 460px;grid-gap: 50px;text-align: center;
+    p{font-size:1.5em;color:var(--first-color);}
+    svg{max-width: 150px;width:90%;margin:0 auto;display: block;
+      .path1{transform-origin:23.5px 8.2px;-webkit-animation:inovationAnimate 5s reverse infinite ;-moz-animation:inovationAnimate 5s reverse infinite;-ms-animation:inovationAnimate 5s reverse infinite;animation:inovationAnimate 5s reverse infinite}
+      .path2{transform-origin:8.5px 16px;-webkit-animation:inovationAnimate 5s infinite ;-moz-animation:inovationAnimate 5s infinite;-ms-animation:inovationAnimate 5s infinite;animation:inovationAnimate 5s infinite}
+      .path3{transform-origin:22.2px 22.9px;-webkit-animation:inovationAnimate 3s infinite ;-moz-animation:inovationAnimate 3s infinite;-ms-animation:inovationAnimate 3s infinite;animation:inovationAnimate 3s infinite}
+    }
+  }
+} 
+
+.awardsSection{
+  .container{text-align:center;max-width:550px;display: grid;grid-template-columns:100px calc(100% - 100px);padding:70px 0px;background:url('../assets/beneficios-back.png') var(--first-color);
+    .imgContainer{
+      img{max-width: 50px;}
+    }
+    p{font-size: 1.5em;color:var(--white-color);text-align: left;}
+  }
+}
+@media(max-width: 660px){
+  .awardsSection .container p{font-size: 1em;max-width: 95%;}
+}
+.downloadSection{padding:100px 0; text-align: center;
+  .title{margin-bottom: 50px;}
+  .filesContainer{display: grid;grid-template-columns: repeat(3,15%);grid-gap:20px;justify-content: space-evenly;
+    img{width:100%;max-width: 70px;}
+    a{text-decoration: none;
+      p{color:var(--second-color);font-size: 0.7em;}
+    }
+  }
+}
+@media(max-width: 660px){
+  .downloadSection .filesContainer{grid-template-columns: repeat(3,30%);}
+}
+
+.demoSection{text-align: center;
+  .title{margin-bottom: 50px;}
+  .filesContainer{display: grid;grid-template-columns: repeat(3,15%);grid-gap:20px;justify-content: space-evenly;
+    img{width:100%;max-width: 70px;}
+    a{text-decoration: none;
+      p{color:var(--first-color);font-size: 0.7em;}
+    }
+  }
+}
+@media(max-width: 660px){
+  .demoSection .filesContainer{grid-template-columns: repeat(3,30%);}
+}
+
+.mailingSection{padding: 50px 0 0 0;text-align: center;
+  .container{max-width: 550px;}
+  .title{margin-bottom: 50px;}
+  #mailingForm{display: grid;grid-template-columns: 80% 20%;}
+  #email{border: 4px solid #3d3d3d;padding:10px;background: transparent;outline: none;font-family: 'Oswald', sans-serif;}
+  #submit{background: #3d3d3d;color:#fff;font-size: 1em;border:0;outline: none;font-family: 'Oswald', sans-serif;}
+}
+
+.whatsappContainer{position: fixed;bottom: 20px;right:20px;width: 50px;height: 50px;
+  img{width:100%;}
+}
 
 
 
-
-
-
-
-
+@-webkit-keyframes inovationAnimate{0%{transform: rotate(0);}100%{transform: rotate(360deg);}}
+@-moz-keyframes inovationAnimate{0%{transform: rotate(0);}100%{transform: rotate(360deg);}}
+@-ms-keyframes inovationAnimate{0%{transform: rotate(0);}100%{transform: rotate(360deg);}}
+@-o-keyframes inovationAnimate{0%{transform: rotate(0);}100%{transform: rotate(360deg);}}
+@keyframes inovationAnimate{0%{transform: rotate(0);}100%{transform: rotate(360deg);}}
 
 
 

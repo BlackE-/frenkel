@@ -8,6 +8,9 @@ class Index{
 		this.json = json;
 		this.transitionBeneficios = document.getElementById(id_beneficios);
 		this.transitionServicios = document.getElementById(id_servicios);
+		const heightSlider = this.debounce(this.heightSlider.bind(this), 100,this);
+		window.addEventListener('resize', heightSlider, false);
+
 		this.init();
 	}
 
@@ -17,22 +20,15 @@ class Index{
 		}).mount();
 	}
 
+	heightSlider = () =>{
+		const glide__slide = [...document.getElementsByClassName('glide__slide')];
+		let longest = glide__slide.reduce( function (a, b) {return a.clientHeight > b.clientHeight ? a: b; });
+		glide__slide.forEach((i)=>{i.style.height = `${longest.clientHeight}px`;});
+	}
+
 	setLottieAnimation = () =>{
 		lottie.loadAnimation({container: document.querySelector("lottie-player"),renderer: 'svg',loop: true,autoplay: true,path: this.json,});
 	}
-
-	// setSlider = () =>{
-		// custom options
-		// var options = {
-		// 	// element: document.querySelector('.glide'),
-		//     easing: 0.075,
-		//     duration: 500,
-		//     dragSpeed: 1.75,
-		// }
-
-		// // let's go!
-		// var slider = new Slider(options);
-	// }
 
 	setTimelines = () =>{
 		let tl2 = gsap.timeline({scrollTrigger: {trigger: ".sectionCarousel"}});
@@ -47,10 +43,23 @@ class Index{
 		tl4.from("#partnerContainer", {opacity: 0,scale:1.2}).to("#partnerContainer", {opacity: 1,scale:1, duration: 0.5});
 	}
 
+	debounce(func, wait, scope) {
+        var timeout;
+        return function () {
+            var context = scope || this, args = arguments;
+            var later = function () {
+                timeout = null;
+                func.apply(context, args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
 	init = () =>{
 		this.setLottieAnimation();
 		this.setTimelines();
-		setTimeout(()=>{this.setGlide();},1000);
+		setTimeout(()=>{this.setGlide();this.heightSlider()},1000);
 	}
 }
 

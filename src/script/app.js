@@ -41,6 +41,8 @@ H.on( 'NAVIGATE_IN', ({ to, location }) => {//listen to the navegate IN
 const checkLinkAnimations = (link) =>{
 	let l = link.split('/');
 	switch(l[l.length-1]){
+		case "capacitacion.html":setWhite();break;
+		case "inovacion-4.0.html":setWhite();break;
 		case "servicios.html":setOrange();_animations.servicios();break;
 		case "beneficios.html":setBlue();_animations.beneficios();break;
 		default:setWhite();_animations.index();
@@ -51,6 +53,8 @@ const checkLinkAnimations = (link) =>{
 const checkLinkTransitions = (link) =>{
 	maximusContainer.classList = '';let l = link.split('/');
 	switch(l[l.length-1]){
+		case "capacitacion.html":setWhite();break;
+		case "inovacion-4.0.html":setWhite();break;
 		case "servicios.html":setOrange();break;
 		case "beneficios.html":setBlue();break;
 		default:setWhite();
