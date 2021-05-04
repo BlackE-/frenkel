@@ -1,6 +1,8 @@
 import Index from './files/index.js';
 import MenuServicios from './files/menuServicios.js';
 import MenuBeneficios from './files/menuBeneficios.js';
+import Inovacion from './files/inovacion.js';
+import Capacitacion from './files/capacitacion.js';
 
 class Animations{
 	constructor(){}
@@ -21,6 +23,16 @@ class Animations{
 			document.getElementById('swipeArea'),
 			document.querySelectorAll(".box")
 			);
+	}
+
+	inovacion(){
+		this.header();
+		new Inovacion();
+	}
+
+	capacitacion(){
+		this.header();
+		new Capacitacion();
 	}
 
 	header(){

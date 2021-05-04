@@ -90,6 +90,7 @@
 </head>
 <body>
 	<div id="canvasBackground"><canvas id="paintonme"></canvas></div>
+	<div class="whatsappContainer"><a href="#" target="_blank"><img src="src/assets/icons/FRK-whatsapp.svg" loading="lazy"/></a></div>		
 	<div id="maximusContainer" data-scroll="data-scroll">
 		<div id="scrollContainer" data-scroll-content="data-scroll-content">
 			<header>
@@ -119,7 +120,57 @@
 			</header>
 			<main id="main" data-router-wrapper>
 				<section data-router-view="capacitacion" class="sectionView">
-					
+					<div class="logoHeaderContainer">
+						<a class="logoHeader" href="index.html">
+							<img src="src/assets/frenkel-logo.svg" loading="lazy" alt="Frenkel-logo"/>
+						</a>
+					</div>
+					<div class="sectionFirst" id="capacitacionSection">
+						<div class="container">
+							<div class="capacitacionBox">
+								<img src="src/assets/servicios-back.png" alt="capacitacion 1"/>
+								<button class="inscribirse" id="curso1">inscríbase</button>
+							</div>
+							<div class="capacitacionBox">
+								<img src="src/assets/servicios-back.png" alt="capacitacion 2"/>
+								<button class="inscribirse" id="curso2">inscríbase</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="mailingSection">
+						<div class="container">
+							<p class="title">Suscríbase a nuestro mailing list para enterarse de nuevas capacitaciones</p>
+							<form id="mailingForm">
+								<input type="email" name="email" id="email">
+								<input type="submit" value="enviar" id="submit">
+							</form>
+						</div>
+					</div>
+
+
+					<div class="formSection" id="formSection">
+						<div class="container">
+							<p class="title">¿Le interesa alguna capacitación para su planta? Déjenos su información:</p>
+							<form id="capacitacionForm">
+								<div><input type="text" name="name" id="nameCapacitacion" placeholder="NOMBRE" required></div>
+								<div><input type="email" name="email" id="emailCapacitacion" placeholder="CORREO ELECTRÓNICO" required></div>
+								<div><input type="tel" name="phone" id="phoneCapacitacion" placeholder="TELÉFONO (Ej:+52 55 5555 5555)"></div>
+								<div class="selectContainer">
+									<select id="cursos" required>
+										<option value="0">CURSO</option>
+										<option value="curso1">CURSO 1</option>
+										<option value="curso2">CURSO 2</option>
+									</select>
+								</div>
+								<div><textarea id="message" name="message" placeholder="MENSAJE"></textarea></div>
+								<div><input type="submit" value="ENVIAR" id="submit"></div>
+								<p class="response" id="responseCapacitacion"></p>
+							</form>
+						</div>
+					</div>
+
+
 					<div class="container"><hr></div>
 					<footer class="footer">
 						<div class="container">

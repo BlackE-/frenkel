@@ -342,6 +342,7 @@ ul#ulText{text-align: center;list-style: none;padding:0;position: relative;width
 
 #inovacionSection {padding:100px 0;
   .container{display: grid;grid-template-rows:40% 20% 40%;max-width: 460px;grid-gap: 50px;text-align: center;
+    div{transform:scale(1);opacity: 1;-webkit-transition: 1s ease-in-out;-moz-transition: 1s ease-in-out;-o-transition: 1s ease-in-out;transition: 1s ease-in-out;}
     p{font-size:1.5em;color:var(--first-color);}
     svg{max-width: 150px;width:90%;margin:0 auto;display: block;
       .path1{transform-origin:23.5px 8.2px;-webkit-animation:inovationAnimate 5s reverse infinite ;-moz-animation:inovationAnimate 5s reverse infinite;-ms-animation:inovationAnimate 5s reverse infinite;animation:inovationAnimate 5s reverse infinite}
@@ -350,6 +351,16 @@ ul#ulText{text-align: center;list-style: none;padding:0;position: relative;width
     }
   }
 } 
+
+ @for $i from 0 through 3 {
+  #inovacionSection .container div:nth-child(#{$i}){
+  -webkit-animation:loadAnimation;
+  -moz-animation:loadAnimation;
+  -ms-animation:loadAnimation;
+  animation:loadAnimation ;
+  animation-duration: $i * 1s;
+  }
+}
 
 .awardsSection{
   .container{text-align:center;max-width:550px;display: grid;grid-template-columns:100px calc(100% - 100px);padding:70px 0px;background:url('../assets/beneficios-back.png') var(--first-color);
@@ -390,15 +401,55 @@ ul#ulText{text-align: center;list-style: none;padding:0;position: relative;width
 
 .mailingSection{padding: 50px 0 0 0;text-align: center;
   .container{max-width: 550px;}
-  .title{margin-bottom: 50px;}
+  .title{margin-bottom: 50px;font-size:1.25em;}
   #mailingForm{display: grid;grid-template-columns: 80% 20%;}
   #email{border: 4px solid #3d3d3d;padding:10px;background: transparent;outline: none;font-family: 'Oswald', sans-serif;}
-  #submit{background: #3d3d3d;color:#fff;font-size: 1em;border:0;outline: none;font-family: 'Oswald', sans-serif;}
+  #submit{background: #3d3d3d;color:#fff;font-size: 1em;border:4px solid #3d3d3d;border-left:0;outline: none;font-family: 'Oswald', sans-serif;-webkit-transition: 300ms ease-in-out;-moz-transition: 300ms ease-in-out;-o-transition: 300ms ease-in-out;transition: 300ms ease-in-out;}
+  #submit:hover{cursor:pointer;background: #fff;color:#3d3d3d;}
 }
 
-.whatsappContainer{position: fixed;bottom: 20px;right:20px;width: 50px;height: 50px;
+.whatsappContainer{position: fixed;bottom: 20px;right:20px;width: 50px;height: 50px;z-index: 1;
+  &:hover{cursor:pointer;}
   img{width:100%;}
 }
+
+#capacitacionSection{padding:50px 0;
+  .container{display: grid;grid-template-rows:50% 50%;max-width: 460px;grid-gap: 50px;text-align: center;
+    div{transform:scale(1);opacity: 1;-webkit-transition: 1s ease-in-out;-moz-transition: 1s ease-in-out;-o-transition: 1s ease-in-out;transition: 1s ease-in-out;
+      img{width:100%;max-width: 550px;margin: 0 auto;}
+      button{font-family: 'Oswald', sans-serif;background: var(--first-color);color:var(--white-color);font-size:1.1em;padding:10px 25px;outline: none;border:1px solid transparent;-webkit-transition: 300ms ease-in-out;-moz-transition: 300ms ease-in-out;-o-transition: 300ms ease-in-out;transition: 300ms ease-in-out;}
+      button:hover{cursor:pointer;background: var(--second-color);}
+    }
+  }
+}
+@for $i from 0 through 2 {
+  #capacitacionSection .container div:nth-child(#{$i}){
+  -webkit-animation:loadAnimation;
+  -moz-animation:loadAnimation;
+  -ms-animation:loadAnimation;
+  animation:loadAnimation ;
+  animation-duration: $i * 1s;
+  }
+}
+
+.formSection{padding:100px 0;
+  .container{color:var(--second-color);text-align: center;
+    .title{font-size: 1.25em;margin-bottom: 50px;}
+    #capacitacionForm{width:100%;max-width: 550px;margin:0 auto;
+      input{border: 4px solid var(--second-color);outline: none;width:calc(100% - 20px);padding:10px 5px;margin-bottom: 25px;font-family: 'Oswald', sans-serif; background:transparent;
+        &[type="submit"]{background: #3d3d3d;color:#fff;border:4px solid #3d3d3d;width: 100%;font-size: 1.25em;-webkit-transition: 1s ease-in-out;-moz-transition: 300ms ease-in-out;-o-transition: 300ms ease-in-out;transition: 300ms ease-in-out;}
+        &[type="submit"]:hover{cursor: pointer;background: #fff;color:#3d3d3d;}
+      }
+      textarea{font-family: 'Oswald', sans-serif;border: 4px solid var(--second-color);outline: none;width:calc(100% - 20px);padding:10px 5px;margin-bottom: 25px;background: transparent;resize:none;}
+      .selectContainer{position:relative;width:100%;
+        select{display: block;font-family: 'Oswald', sans-serif;border: 4px solid var(--second-color);outline: none;width:100%;padding:10px 5px;margin-bottom: 25px;background: transparent; -webkit-appearance: none;-moz-appearance: none;}
+      }
+      .selectContainer:after{content: "▲";position: absolute; z-index: 2; top: 15px; right: 10px; transform-origin: 50% 60%;line-height: 1em;font-size: 1em;transform: rotate(180deg);transition: 0.4s ease;}
+    }
+  }
+}
+
+#capacitacionForm{select::-ms-expand {display:none;} }
 
 
 
