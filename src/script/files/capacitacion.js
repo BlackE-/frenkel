@@ -9,6 +9,8 @@ class Capacitacion{
 				document.getElementById('cursos').value = item.getAttribute('id');
 			});
 		});
+		this.mailingForm = document.getElementById("mailingForm"); 
+		this.responseMailing = document.getElementById("responseMailing"); 
 		this.capacitacionForm = document.getElementById("capacitacionForm"); 
 		this.responseCapacitacion = document.getElementById('responseCapacitacion');
 		this.setTimelines();
@@ -26,47 +28,67 @@ class Capacitacion{
 
 	validateName(name){return /^[a-zA-Z]+ [a-zA-Z]+$/.test(name);}
 	validateEmail(email){return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);}
-	// validatePhone(phone){return /^(\+\d{1,2}\s)?\(?\d{2}\)?[\s.-]\d{4}[\s.-]\d{4}$/.test(phone);}
 	validatePhone(phone){return /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/.test(phone);}
 	validateCurso(curso){return (curso == 0) ? false: true;}
-	setError(message){this.responseCapacitacion.innerHTML = message;return}
+	setMessageCapacitacion(message){this.responseCapacitacion.innerHTML = message;return}
+	setMessageMailing(message){this.responseMailing.innerHTML = message;return}
 
-	submitForm(){
-		this.setError('');
+	submitMailingForm(){
+		this.setMessageMailing('');
+		const response = document.getElementById('responseMailing');
+		const emailForm = this.mailingForm.elements['email'];
+		if(!this.validateEmail(emailForm.value)){this.setMessageMailing("Email inválido");return false;}
+		
+		this.mailingForm.submit.disabled = false;
+		var xhttp = new XMLHttpRequest();
+	    xhttp.onreadystatechange = function() {
+	         if (this.readyState == 4 && this.status == 200) {
+	            response.innerHTML = `Hemos guardado tu información en nuestro mailing list`;	
+	            setTimeout(function(){response.innerHTML = '';this.mailingForm.reset();},3000);
+	         }
+	         if (this.readyState == 4 && this.status == 400) {
+	         	this.mailingForm.submit.disabled = true;
+	            response.innerHTML = `Ha ocurrido un error, intentarlo nuevamente.`;
+	         }
+	    }
+	    xhttp.open("POST", "include/mailingForm.php", true);
+	    xhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset=UTF-8');
+	    xhttp.send(`email=${emailForm.value}&origin=mailingCapacitacion&today=${new Date()}`);
+	}
+
+	submitCapacitacionForm(){
+		this.setMessageCapacitacion('');
+		const response = document.getElementById('responseCapacitacion');
 		const nameForm = this.capacitacionForm.elements['name'];
 		const phoneForm = this.capacitacionForm.elements['phone'];
-		console.log(phoneForm.value);
 		const emailForm = this.capacitacionForm.elements['email'];
 		const mensajeForm = this.capacitacionForm.elements['message'];
 		const cursoForm = this.capacitacionForm.elements['cursos'];
-		if(!this.validateEmail(emailForm.value)){emailForm.setCustomValidity("Email inválido");this.setError("Email inválido");emailForm.reportValidity();   		return false;}
-		if(!this.validateName(nameForm.value)){nameForm.setCustomValidity('Nombre inválido');this.setError("Nombre inválido");nameForm.reportValidity();			return false;}
-		if(!this.validatePhone(phoneForm.value)){phoneForm.setCustomValidity('Teléfono inválido');this.setError("Teléfono inválido");phoneForm.reportValidity();	return false;}
-		if(!this.validateCurso(cursoForm.value)){cursoForm.setCustomValidity('Selecciona un curso');this.setError("Selecciona un curso");cursoForm.reportValidity();return false;}
-			
-
-		// var xhttp = new XMLHttpRequest();
-  //        xhttp.onreadystatechange = function() {
-  //            if (this.readyState == 4 && this.status == 200) {
-  //                const res = JSON.parse(this.responseText);
-  //               response.innerHTML = `GRACIAS ${res.message}`;
-  //               // dataLayer.push({'event': 'EnviarFormularioModal-QuieroMiDescuento-Desktop','landingPage':{'btn_activador':btn_activador}});
-  //               setTimeout(function(){response.innerHTML = '';},3000);
-  //            }
-  //            else{
-  //                const errorMessage = JSON.parse(this.responseText);
-  //                response.innerHTML = errorMessage.message;
-  //            }
-  //        };
-  //        xhttp.open("POST", "script/enviarFormularioFooter.php", true);
-  //        xhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset=UTF-8');
-  //        xhttp.send("name="+name.value+"&phone="+itl.getNumber()+"&email="+email.value+"&mensaje="+mensaje.value);
-
+		if(!this.validateEmail(emailForm.value)){this.setMessageCapacitacion("Email inválido");return false;}
+		if(!this.validateName(nameForm.value)){this.setMessageCapacitacion("Nombre inválido");return false;}
+		if(!this.validatePhone(phoneForm.value)){this.setMessageCapacitacion("Teléfono inválido");	return false;}
+		if(!this.validateCurso(cursoForm.value)){this.setMessageCapacitacion("Selecciona un curso");return false;}
+		
+		this.capacitacionForm.submit.disabled = false;
+		var xhttp = new XMLHttpRequest();
+         xhttp.onreadystatechange = function() {
+             if (this.readyState == 4 && this.status == 200) {
+                response.innerHTML = `Gracias, hemos guardado tu datos, te enviaremos lo antes posible la información del curso`;	
+                setTimeout(function(){response.innerHTML = '';this.capacitacionForm.reset();},3000);
+             }
+             if (this.readyState == 4 && this.status == 400) {
+             	this.capacitacionForm.submit.disabled = true;
+                response.innerHTML = errorMessage.message;
+             }
+         }
+         xhttp.open("POST", "include/capacitacionForm.php", true);
+         xhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset=UTF-8');
+         xhttp.send(`name=${nameForm.value}&phone=${phoneForm.value}&email=${emailForm.value}&message=${mensajeForm.value}&curse=${cursoForm.value}&today=${new Date()}`);
 	}
 
-	init(){
-		this.capacitacionForm.addEventListener("submit", function(event){event.preventDefault();console.log("submitForm");this.submitForm();}.bind(this),false);  
-		// document.querySelector('#capacitacionForm #submit').addEventListener("click", function(event){event.preventDefault();console.log("submitForm");this.submitForm();}.bind(this),false);  
+	init(){	
+		this.capacitacionForm.addEventListener("submit", function(event){event.preventDefault();this.submitCapacitacionForm();}.bind(this),false);
+		this.mailingForm.addEventListener("submit", function(event){event.preventDefault();this.submitMailingForm();}.bind(this),false);
 	}
 }
 
