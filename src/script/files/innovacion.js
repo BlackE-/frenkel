@@ -1,4 +1,4 @@
-class Inovacion{
+class Innovacion{
 	constructor(){
 		this.mailingForm = document.getElementById("mailingForm"); 
 		this.responseMailing = document.getElementById("responseMailing");
@@ -58,4 +58,4 @@ class Inovacion{
 	}
 }
 
-export default Inovacion;
+export default Innovacion;

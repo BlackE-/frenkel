@@ -3,9 +3,8 @@ import Highway from '@dogstudio/highway';
 // Expand
 class Expand extends Highway.Transition {
   in({ from, to, done }) {
+    
     from.remove();
-    // Animation
-    gsap.fromTo(from, 0.5,{ opacity: 1 },{opacity: 0,onComplete: done});
   }
 
   out({ from,trigger, done }) {
@@ -18,9 +17,7 @@ class Expand extends Highway.Transition {
     dialog.style.top = `${btn.top + window.scrollY}px`;
     dialog.style.left = `${btn.left}px`;
     dialog.classList.add('clicked');
-
-    setTimeout(()=>{window.scrollTo(0, 0);},2000);
-    setTimeout(()=>{done();},3000);
+    setTimeout(()=>{window.scrollTo(0, 0);done();},3000);
   }
 }
 

@@ -5,11 +5,11 @@ class Drawing{
 		this.ctx = this.canvas.getContext("2d");
 		this.mouse = new Mouse();
 		this.myRef;
-		// this.maxLength = 10;
 		this.maxLength = 5;
 		this.background = 'rgb(255,255,255)';
 		this.strokeStyle = 'rgb(255)';
-
+		// this.isChrome = (navigator.userAgent.indexOf("Chrome") !== -1) ? true : false;
+		this.isFirefox = (navigator.userAgent.indexOf("Firefox") !== -1) ? true : false;
 		this.positions = [];
 		const onResizeHandler = this.debounce(this.onResize.bind(this), 100,this);
 		window.addEventListener('resize', onResizeHandler, false);
@@ -19,6 +19,7 @@ class Drawing{
 	    this.startTime = this.then;
         this.onResize();
         this.animate();
+
 	}
 
 	onResize(e) {
@@ -47,26 +48,30 @@ class Drawing{
 	map(n, start1, stop1, start2, stop2) {return ((n-start1)/(stop1-start1))*(stop2-start2)+start2;}
 
 	render() {
-		this.ctx.globalCompositeOperation = 'source-over';
+		this.ctx.globalCompositeOperation = 'source-over'
 		this.ctx.fillStyle = this.background;
 		this.ctx.rect(0,0,this.canvas.width,this.canvas.height);
 		this.ctx.fill();
-		this.ctx.globalCompositeOperation = 'screen';
-		this.positions.push([this.mouse.pos.x, this.mouse.pos.y]);
+		if(!this.isFirefox){
+			this.ctx.globalCompositeOperation = 'screen';
+			this.positions.push([this.mouse.pos.x, this.mouse.pos.y]);
+			
+			if (this.positions.length > this.maxLength) {this.positions.splice(0, 1);}
+			this.ctx.shadowColor = this.background;
 
-		if (this.positions.length > this.maxLength) {this.positions.splice(0, 1);}
-		this.ctx.shadowColor = this.background;
-
-		for (let i = 0; i < this.positions.length; i++) {
-	      let pos = this.positions[i];
-	      this.ctx.beginPath();
-	      this.ctx.strokeStyle = this.strokeStyle;
-	      this.ctx.lineWidth = `${this.map(i, 0, this.maxLength, 420, 220)}`;
-	      this.ctx.shadowBlur = this.map(i, 0, this.maxLength, 255, 200);
-	      this.ctx.arc(pos[0], pos[1], 50, 0, Math.PI * 2, false);
-	      this.ctx.stroke();
-	      this.ctx.closePath();
-	    }
+			for (let i = 0; i < this.positions.length; i++) {
+		      let pos = this.positions[i];
+		      this.ctx.beginPath();
+		      this.ctx.strokeStyle =  this.strokeStyle;
+		      this.ctx.lineWidth = `${this.map(i, 0, this.maxLength, 420, 220)}`;
+		      this.ctx.shadowBlur = this.map(i, 0, this.maxLength, 255, 200)
+		      this.ctx.arc(pos[0], pos[1], 50, 0, Math.PI * 2, false);
+		      this.ctx.stroke();
+		      this.ctx.closePath();
+		    }
+		}
+	
+		
 	}
 	/**
 	 * debouncing, executes the function if there was no new event in $wait milliseconds

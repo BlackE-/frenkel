@@ -11,17 +11,12 @@ class MenuBeneficios{
 
     setInViewStyles = (target) => {target.classList.add('is-inview')}
     setOutOfViewStyles = (target) => {
-        if(!target.classList.contains('is-inview')){
-            target.classList.remove('is-inview')
-        }
+        if(!target.classList.contains('is-inview')){target.classList.remove('is-inview')}
     }
 
     onIntersect = (entries) => {
         entries.forEach(entry => {
-            // if (entry.intersectionRatio >= this.options.threshold && entry.isIntersecting) {
-            if (entry.isIntersecting) {
-                return this.setInViewStyles(entry.target)
-            }
+            if (entry.isIntersecting) {return this.setInViewStyles(entry.target)}
             return this.setOutOfViewStyles(entry.target)
         })
     }
@@ -36,11 +31,9 @@ class MenuBeneficios{
                     for(let s of this.sections){s.classList.remove('active');}
                     item.classList.add("active");
                     document.getElementById(`content_${item.getAttribute('id')}`).classList.add('active');
-
                 }
 			}.bind(this),false);
 		});
-
         this.observer = new IntersectionObserver(this.onIntersect, this.options);
         this.boxes.forEach(el => {this.observer.observe(el)})
     }
