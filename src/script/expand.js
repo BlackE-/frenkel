@@ -17,7 +17,7 @@ class Expand extends Highway.Transition {
     dialog.style.top = `${btn.top + window.scrollY}px`;
     dialog.style.left = `${btn.left}px`;
     dialog.classList.add('clicked');
-    setTimeout(()=>{window.scrollTo(0, 0);done();},3000);
+    setTimeout(()=>{window.scrollTo(0, 0);done();},2000);
   }
 }
 

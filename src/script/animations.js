@@ -17,7 +17,7 @@ class Animations{
 
 	servicios(){
 		this.header();
-		new MenuServicios( ".circle-container li","#ulText li",'#swipeArea',".box");
+		new MenuServicios(".circle-container li","#ulTitleH2","#ulText li",'#swipeArea',".box");
 	}
 
 	innovacion(){

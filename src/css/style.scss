@@ -319,7 +319,7 @@ hr{background:#818181;margin:50px 20px 0 20px;border: 0;height: 1px;}
 
 
 /*  SERVICIOS */ 
-#firstSectionServices .container{display: grid;grid-template-columns: 270px calc(100% - 270px);width:calc(100% - 20px);margin:0; }
+#firstSectionServices .container{display: grid;grid-template-columns: 500px calc(100% - 500px); width:calc(100% - 20px);margin:0; }
 #containerMenu{position: absolute;touch-action: none;border: 3px solid #eabe97;z-index: 1;border-radius: 50%;width: 490px;height: 500px;left: -300px;}
 .titleServicios{margin:0 auto 50px;text-align: center;color:#fff;}
 ul#ulMenu{position: relative;top: 200px;left:calc(50% - 45px);list-style: none;padding: 0;width: 0px;
@@ -337,16 +337,21 @@ ul#ulMenu{position: relative;top: 200px;left:calc(50% - 45px);list-style: none;p
     p{opacity: 1} 
   }
 }
+ul#ulTitle{list-style: none;margin:0 0 0 580px;height: 100%;width: calc(100% - 280px);display: grid;align-items: center;
+  li{
+    .sectionDescription{display: grid;grid-template-columns: auto 50px; align-items: center;}
+    .arrow{width: 35px;display: block;transform:rotate(-90deg);}
+  }
+}
 ul#ulText{text-align: center;list-style: none;padding:0;position: relative;min-height: 80vh;
    li{display: grid;
-    section{display: grid;grid-template-columns: 1fr 2fr;align-items: center;color:#fff;position:absolute;top:0;left:0;width:100%;opacity: 0;transform-origin: 50%;-webkit-transition: 500ms ease-in-out;-moz-transition: 500ms ease-in-out;transition: 500ms ease-in-out;
-    .sectionDescription{display: grid;grid-template-columns: auto 50px; align-items: center;}
+    section{display: grid;align-items: center;color:#fff;position:absolute;top:0;left:0;width:100%;opacity: 0;transform-origin: 50%;
     h2{font-size: 1.3em;opacity: 1;font-weight: 500;text-align: left;}
     .boxContainer{display:grid;grid-template-columns: 1fr 1fr 1fr;grid-gap: 25px;}
-    .box{opacity: 0;display:grid;-webkit-transition: .5s ease-in-out;-moz-transition: .5s ease-in-out;-o-transition: .5s ease-in-out;transition: .5s ease-in-out;
+    /*.box{opacity: 0;display:grid;-webkit-transition: .5s ease-in-out;-moz-transition: .5s ease-in-out;-o-transition: .5s ease-in-out;transition: .5s ease-in-out;*/
+    .box{opacity: 0;display:grid;
       &.is-inview{opacity: 1;-webkit-animation:loadAnimation;-moz-animation:loadAnimation;-ms-animation:loadAnimation;animation:loadAnimation;}
     }
-    .arrow{width: 35px;display: block;transform:rotate(-90deg);}
     span{
       img{max-width: 50px;margin:0 0 10px 0;}
     }
@@ -380,14 +385,17 @@ ul#ulText{text-align: center;list-style: none;padding:0;position: relative;min-h
   .titleServicios{padding:85px 0 150px;margin:0 auto;}
   #containerMenu{width: 250px;height: 250px;top: -40px;left: calc(50% - 125px);z-index:0;}
   ul#ulMenu{width:360px;height:100%;top:60px;left: calc(50% - 40px);margin:0 auto;}
-  ul#ulText{margin:0 auto;}
+  ul#ulTitle{width:100%;margin:0 auto;}
+  ul#ulTitle li .sectionDescription{grid-template-columns: auto;
+    h2{text-align: center;font-size: 1.5em;}
+    .arrow{opacity: 1 !important;margin: 15px auto 50px auto;transform: rotate(0);}
+  }
+  ul#ulText{margin:135px auto 0 auto}
   ul#ulText li section{grid-template-columns: 1fr;
     .boxContainer{grid-template-columns: 1fr;}
     .sectionDescription{grid-template-columns: 1fr;}
-     h2{text-align: center;font-size: 1.5em;}
+     .separator{opacity: 1 !important;display: block;}
      p{width: 80%;}
-    .arrow{opacity: 1 !important;margin: 15px auto 50px auto;transform: rotate(0);}
-    .separator{opacity: 1 !important;display: block;}
   }
   
   
