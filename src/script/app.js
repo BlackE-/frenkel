@@ -17,7 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 const H = new Highway.Core({
 	transitions:{
 		default: Fade,
-		contextual: {overlap: Expand}
+		contextual: {expand: Expand}
 	}
 });
 H.on('NAVIGATE_OUT',({from, trigger,location}) =>{_menu.closeMenu();});//listen to the navigate OUT
@@ -28,7 +28,7 @@ H.on( 'NAVIGATE_IN', ({ to, location }) => {//listen to the navegate IN
 const checkLinkAnimations = (link) =>{
 	let l = link.split('/');
 	switch(l[l.length-1]){
-		case "capacitacion.html": 	setWhite(); 	_animations.capacitacion();break;
+		case "capacitacion.html": 	setWhite(); 	_animations.capacitacion();break;	
 		case "innovacion-4.0.html": setWhite(); 	_animations.innovacion();break;
 		case "servicios.html": 		setOrange(); 	_animations.servicios();break;
 		case "beneficios.html": 	setBlue(); 		_animations.beneficios();break;

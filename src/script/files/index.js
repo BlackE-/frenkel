@@ -10,12 +10,11 @@ class Index{
 		this.transitionServicios = document.getElementById(id_servicios);
 		const heightSlider = this.debounce(this.heightSlider.bind(this), 100,this);
 		window.addEventListener('resize', heightSlider, false);
-
 		this.init();
 	}
 
 	setGlide = () =>{
-		new Glide(this.slider, {type: 'carousel',autoplay: 0, animationDuration: 600,animationTimingFunc: 'linear',focusAt: 0,perView: 3,peek: 200,
+		new Glide(this.slider, {type: 'carousel',autoplay: 0, animationDuration: 600,animationTimingFunc: 'linear',focusAt: 0,perView: 3,peek: 100,
 			breakpoints: {1080: {perView: 2,peek: 100},768: {perView: 1,peek: 50},460: {perView: 1,peek: 50,gap:20}}
 		}).mount();
 	}
