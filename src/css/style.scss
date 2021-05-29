@@ -272,12 +272,12 @@ hr{background:#818181;margin:50px 20px 0 20px;border: 0;height: 1px;}
   .title{font-weight:500;margin:50px auto;opacity: 1;transform: scale(1);-webkit-transition: .5s ease-in-out;-moz-transition: .5s ease-in-out;-o-transition: .5s ease-in-out;transition: .5s ease-in-out;-webkit-animation:loadAnimation 1s ;-moz-animation:loadAnimation 1s;-ms-animation:loadAnimation 1s;animation:loadAnimation 1s;}
   .container{text-align: center;display:grid;grid-template-columns: 1fr 2fr;align-items: center;grid-gap: 10%;
     .boxFirst{
-      img{width:100%;max-width: 150px;margin:0 auto;}
+      img{width:100%;margin:0 auto;}
       p{text-align: left;}
     }
     .box{opacity: 0;-webkit-transition: .5s ease-in-out;-moz-transition: .5s ease-in-out;-o-transition: .5s ease-in-out;transition: .5s ease-in-out;
       &.is-inview{opacity: 1;}
-      img{width:100%;max-width: 150px;margin:0 auto;}
+      img{width:100%;margin:0 auto;}
       p{text-align: left;}
       
     }
@@ -348,7 +348,6 @@ ul#ulText{text-align: center;list-style: none;padding:0;position: relative;min-h
     section{display: grid;align-items: center;color:#fff;position:absolute;top:0;left:0;width:100%;opacity: 0;transform-origin: 50%;
     h2{font-size: 1.3em;opacity: 1;font-weight: 500;text-align: left;}
     .boxContainer{display:grid;grid-template-columns: 1fr 1fr 1fr;grid-gap: 25px;}
-    /*.box{opacity: 0;display:grid;-webkit-transition: .5s ease-in-out;-moz-transition: .5s ease-in-out;-o-transition: .5s ease-in-out;transition: .5s ease-in-out;*/
     .box{opacity: 0;display:grid;
       &.is-inview{opacity: 1;-webkit-animation:loadAnimation;-moz-animation:loadAnimation;-ms-animation:loadAnimation;animation:loadAnimation;}
     }
@@ -397,14 +396,10 @@ ul#ulText{text-align: center;list-style: none;padding:0;position: relative;min-h
      .separator{opacity: 1 !important;display: block;}
      p{width: 80%;}
   }
-  
-  
-  
 }
 
-
 #inovacionSection {padding:50px 0 100px 0;
-  .container{height:100%;display: grid;grid-template-rows:40% 20% 40%;max-width: 460px;grid-gap: 70px;text-align: center;
+  .container{height:100%;display: grid;max-width: 460px;grid-gap: 70px;text-align: center;
     div{transform:scale(1);opacity: 1;-webkit-transition: 1s ease-in-out;-moz-transition: 1s ease-in-out;-o-transition: 1s ease-in-out;transition: 1s ease-in-out;}
     p{font-size:1.6em;color:var(--first-color);}
     svg{max-width: 150px;width:90%;margin:0 auto;display: block;
@@ -446,8 +441,8 @@ ul#ulText{text-align: center;list-style: none;padding:0;position: relative;min-h
   }
 }
 @media(max-width: 660px){
-  .downloadSection .filesContainer{grid-template-columns: repeat(3,30%);}
-  .downloadSection .filesContainer a p{font-size:.7em;}
+  .downloadSection .filesContainer{grid-template-columns: 1fr;grid-gap: 50px}
+  .downloadSection .filesContainer a p{font-size:1em;}
 }
 
 .demoSection{text-align: center;
@@ -460,8 +455,8 @@ ul#ulText{text-align: center;list-style: none;padding:0;position: relative;min-h
   }
 }
 @media(max-width: 660px){
-  .demoSection .filesContainer{grid-template-columns: repeat(3,30%);}
-  .demoSection .filesContainer a p{font-size: .7em;}
+  .demoSection .filesContainer{grid-template-columns: 1fr;grid-gap: 50px;}
+  .demoSection .filesContainer a p{font-size: 1em;}
 }
 
 .mailingSection{padding: 50px 0 0 0;text-align: center;

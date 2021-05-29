@@ -1,10 +1,19 @@
 class MenuServicios{
-    constructor(liElements,liText,swiperArea,box){
+    constructor(liElements, liTitle, liText, swiperArea, box){
         this.isMobile = this.mobileCheck();
         //menu
-        this.swiperArea = typeof(swiperArea) === 'string' ? document.querySelector(swiperArea) : swiperArea;
-        this.liText = typeof (liText) ===  'string'  ? document.querySelectorAll(liText) : liText;
         this.liElements  =  typeof (liElements) ===  'string'  ?  document.querySelectorAll(liElements) : liElements;
+        this.liText = typeof (liText) ===  'string'  ? document.querySelectorAll(liText) : liText;
+        this.liTitle = typeof (liTitle) ===  'string'  ? document.querySelector(liTitle) : liTitle;
+        this.swiperArea = typeof(swiperArea) === 'string' ? document.querySelector(swiperArea) : swiperArea;
+
+        //
+        this.titleMap = new Map();
+        this.titleMap.set(0, 'IT & Desarrollo de Software');
+        this.titleMap.set(1, 'Automatización y Control');
+        this.titleMap.set(2, 'Consultoría y Asesoría de Ingeniería');
+        this.titleMap.set(3, 'Industry 4.0 Solutions');
+        this.titleMap.set(4, 'Ingeniería de Proceso');
         this.numberOfElements = this.liElements.length;
         this.slice = 360 * (1/this.numberOfElements);
         this.start = -this.slice;
@@ -48,8 +57,8 @@ class MenuServicios{
         let  yUp  =  evt.clientY;
         this.yDiff  = this.yDown  -  yUp;
         if (Math.abs(this.yDiff) !==  0) {
-            if (this.yDiff  >  2) {         this.onLeft();    
-            } else  if (this.yDiff  <  -2) {this.onRight();    
+            if (this.yDiff  >  2) {         this.onLeft();
+            } else  if (this.yDiff  <  -2) {this.onRight(); 
           }
         }
       }
@@ -59,15 +68,17 @@ class MenuServicios{
     }
     onLeft  = () => {
         this.wasRight = 0;
+        console.log(`onleft ${this.prevClicked} - ${this.clicked}`);
         this.prevClicked = this.clicked;
-        switch(this.prevClicked){case 0:this.clicked = 1;break;case 1:this.clicked = 2;break;case 2:this.clicked = 3;break;case 3:this.clicked = 0;break;}
+        switch(this.prevClicked){case 0:this.clicked = 1;break;case 1:this.clicked = 2;break;case 2:this.clicked = 3;break;case 3:this.clicked = 4;break;case 4:this.clicked = 0;break;}
+        console.log(`beforeSETMENU ${this.prevClicked} - ${this.clicked}`);
         this.setMenu();
         this.prevClicked = this.clicked;
     }
     onRight  = () => {
         this.wasRight = 1;
         this.prevClicked = this.clicked;
-        switch(this.prevClicked){case 0:this.clicked = 3;break; case 1:this.clicked = 0;break;case 2:this.clicked = 1;break;case 3:this.clicked = 2;break;}
+        switch(this.prevClicked){case 0:this.clicked = 4;break;case 1:this.clicked = 0;break;case 2:this.clicked = 1;break;case 3:this.clicked = 2;break;case 4:this.clicked = 3;break;}
         this.setMenu();
         this.prevClicked = this.clicked;
     }
@@ -87,18 +98,22 @@ class MenuServicios{
         if(this.wasRight) this.setLeft();
         else this.setRight();
       }
-
+      this.setTitle();
       this.setMenuActive();
       this.setBoxesActive();
       this.rotateMenu();
+      return;
     }
+
+    setTitle = () => {this.liTitle.innerHTML = this.titleMap.get(this.clicked);}
     rotateMenu = () =>{
       const radius = (window.innerWidth < 660) ? '8em' : '15em';
+      const scale = (window.innerWidth < 660) ? '1.2' : '1.5';
       Object.entries(this.liElements).forEach(([key, value]) => {
           let rotate = this.slice * key + this.start + this.extraAngle;
           let rotateReverse = rotate * -1;
           if(value.classList.contains('active'))
-            value.style.transform = `rotate(${rotate}deg)  translate(${radius}) rotate(${rotateReverse}deg) scale(1.5) `;
+            value.style.transform = `rotate(${rotate}deg)  translate(${radius}) rotate(${rotateReverse}deg) scale(${scale}) `;
           else 
             value.style.transform = `rotate(${rotate}deg)  translate(${radius}) rotate(${rotateReverse}deg)`;
       });
@@ -119,7 +134,7 @@ class MenuServicios{
       for(let box of this.boxes){box.classList.remove('is-inview')}
       let boxesActive;
       if(!this.isMobile){
-        this.liText.forEach((item)=>{if(item.classList.contains('active')){boxesActive = item.children[0].children[1].children;}});
+        this.liText.forEach((item)=>{if(item.classList.contains('active')){boxesActive = item.children[0].children[0].children;}});
         for(let i= 0; i < boxesActive.length; i++){
           boxesActive[i].classList.add('is-inview');
           boxesActive[i].style.animationDuration = `${.2 * (i+1)}s`;
