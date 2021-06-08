@@ -24,9 +24,13 @@ class MenuBeneficios{
                 if(this.wrapper.classList.contains('openSelect')){
                     for(let box of this.boxes){box.classList.remove('is-inview')}
                     for(let i of this.liItems){i.classList.remove('active');}
-                    for(let s of this.sections){s.classList.remove('active');}
+                    for(let s of this.sections){
+                        if(s.classList.contains('active')){s.classList.add('out');}
+                        s.classList.remove('active');
+                    }
                     item.classList.add("active");
-                    document.getElementById(`content_${item.getAttribute('id')}`).classList.add('active');         
+                    document.getElementById(`content_${item.getAttribute('id')}`).classList.add('active'); 
+                    setTimeout(()=>{for(let s of this.sections){s.classList.remove('out');}},1000);        
                 }
             }.bind(this),false);
         });
@@ -41,12 +45,18 @@ class MenuBeneficios{
                 if(this.wrapper.classList.contains('openSelect')){
                     for(let box of this.boxes){box.classList.remove('is-inview')}
                     for(let i of this.liItems){i.classList.remove('active');}
-                    for(let s of this.sections){s.classList.remove('active');}
+                    for(let s of this.sections){
+                        if(s.classList.contains('active')){s.classList.add('out');}
+                        s.classList.remove('active');
+                    }
                     item.classList.add("active");
                     let boxesActive = document.getElementById(`content_${item.getAttribute('id')}`);
                     boxesActive.classList.add('active');
                     let a = [...boxesActive.children];
                     a.forEach((caja)=>{caja.classList.add('is-inview');});
+                    setTimeout(()=>{for(let s of this.sections){s.classList.remove('out');}},1000);
+                    
+
                 }
             }.bind(this),false);
         });

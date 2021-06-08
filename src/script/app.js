@@ -11,6 +11,7 @@ const _animations = new Animations();
 const _menu = new Menu('menuHamburguer','nav-icon2','nav','navUl');
 const linksMenu = document.querySelectorAll('nav a');
 const maximusContainer = document.getElementById('maximusContainer');
+const header = document.getElementsByTagName("HEADER")[0];
 
 gsap.registerPlugin(ScrollTrigger);
 /*			highway 			*/
@@ -36,8 +37,8 @@ const checkLinkAnimations = (link) =>{
 	}
 	_animations.footer();
 }
-const setOrange = () => {_draw.setBackground('rgb(211, 117,  34)');maximusContainer.classList = '';maximusContainer.classList.add('orange');}
-const setBlue 	= () => {_draw.setBackground('rgb( 44, 116, 184)');maximusContainer.classList = '';maximusContainer.classList.add('blue');}
-const setWhite 	= () => {_draw.setBackground('rgb(200, 200, 200)');maximusContainer.classList = '';}
+const setOrange = () => {_draw.setBackground('rgb(211, 117,  34)');header.classList = '';header.classList.add('orange');maximusContainer.classList = '';maximusContainer.classList.add('orange');}
+const setBlue 	= () => {_draw.setBackground('rgb( 44, 116, 184)');header.classList = '';header.classList.add('blue');maximusContainer.classList = '';maximusContainer.classList.add('blue');}
+const setWhite 	= () => {_draw.setBackground('rgb(200, 200, 200)');header.classList = ''; maximusContainer.classList = '';}
 const _scroll = new SmoothScroll();
 checkLinkAnimations(window.location.href);

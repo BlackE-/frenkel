@@ -14,7 +14,7 @@ class Index{
 	}
 
 	setGlide = () =>{
-		new Glide(this.slider, {type: 'carousel',autoplay: 0, animationDuration: 600,animationTimingFunc: 'linear',focusAt: 0,perView: 3,peek: 100,
+		new Glide(this.slider, {type: 'carousel',autoplay: 5000, animationDuration: 600,animationTimingFunc: 'linear',focusAt: 0,perView: 3,peek: 100,
 			breakpoints: {1080: {perView: 2,peek: 100},768: {perView: 1,peek: 50},460: {perView: 1,peek: 50,gap:20}}
 		}).mount();
 	}
