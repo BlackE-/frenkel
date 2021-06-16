@@ -1,0 +1,15 @@
+ 	 /* TEAM */                 
+    STUDIO-SUB : https://studio-sub.com                  
+    Twitter: @studio-sub.  
+    Location: Mexico City, MEX		
+
+
+    							
+    /* THANKS */	
+    Name: Alicia & team FRENKEL 
+
+                                
+    /* SITE */                    
+    Last update: 2021/06 
+    Standards: HTML5, CSS3          
+    Components: Parcel, GSAP, Highway, Native Canvas

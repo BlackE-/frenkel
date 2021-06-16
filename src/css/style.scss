@@ -253,12 +253,13 @@ dialog.clicked{transform: scale(50);}
   dialog.clicked{transform: scale(20);}
 }
 .sectionPartners{
-	.container{display: grid;grid-template-columns: 1fr 1fr;grid-gap:20px;align-items: center;max-width: 460px;}
-	.title{grid-column-start: 1;grid-column-end: 3;color:#3d3d3d;}
+	.title{color:#3d3d3d;}
+  #partnerContainer{display: grid;grid-template-columns: repeat(4,1fr);grid-gap:20px;align-items: center;max-width: 1080px;margin:0 auto;}
 	img{margin:0 auto;}
 }
 @media(max-width: 640px){
   .sectionPartners .container{max-width: 245px;}
+  #partnerContainer{grid-template-columns: repeate(2,1fr);}
 }
 
 hr{background:#818181;margin:50px 20px 0 20px;border: 0;height: 1px;}
@@ -330,10 +331,8 @@ ul#ulMenu{position: relative;top: 200px;left:calc(50% - 45px);list-style: none;p
     svg{width:50%;margin:0 auto;}
   }
   li:hover{cursor: pointer;}
-  li:before{content:"";position:absolute;left: -2px;transform: scale(1);width:100%;height: 100%;border:2px solid #eabe97;border-radius: 50%;opacity: 0;-webkit-transition: 500ms ease-in-out;-moz-transition: 500ms ease-in-out;transition: 500ms ease-in-out;
-    animation:loadAnimation 2s infinite;
-    /*animation:liBeforeActive 2s infinite;*/
-  }
+  li:before{content:"";position:absolute;left: -2px;transform: scale(1);width:100%;height: 100%;border:2px solid #fff;border-radius: 50%;opacity: 0;-webkit-transition: 500ms ease-in-out;-moz-transition: 500ms ease-in-out;transition: 500ms ease-in-out;
+    animation:liBefore 2s infinite;}
 
   li.active{opacity:1;background:#fff;
     &:before{opacity: 1;transform:scale(1.1);-webkit-animation:liBeforeActive 1s; -moz-animation:liBeforeActive 1s;-ms-animation:liBeforeActive 1s;animation:liBeforeActive 1s;}
@@ -516,12 +515,17 @@ ul#ulText{text-align: center;list-style: none;padding:0;position: relative;min-h
     }
   }
 }
-
 #capacitacionForm{select::-ms-expand {display:none;} }
 
 
 
 /*  ANIMATIONS  */
+@-webkit-keyframes liBefore{from{opacity:0;transform: scale(1.5);}to{opacity:.8;transform: scale(1);}}
+@-moz-keyframes liBefore{from{opacity:0;transform: scale(1.5);}to{opacity:.8;transform:  scale(1);}}
+@-ms-keyframes liBefore{from{opacity:0;transform: scale(1.5);}to{opacity:.8;transform:  scale(1);}}
+@-o-keyframes liBefore{from{opacity:0;transform: scale(1.5);}to{opacity:.8;transform: scale(1);}}
+@keyframes liBefore{from{opacity:0;transform: scale(1.5);}to{opacity:.8;transform: scale(1);}}
+
 @-webkit-keyframes liBeforeActive{0%,30%{transform:scale(1);opacity: 0;}100%{transform: scale(1.1);opacity: 1;}}
 @-moz-keyframes liBeforeActive{0%,30%{transform:scale(1);opacity: 0;}100%{transform: scale(1.1);opacity: 1;}}
 @-ms-keyframes liBeforeActive{0%,30%{transform:scale(1);opacity: 0;}100%{transform: scale(1.1);opacity: 1;}}

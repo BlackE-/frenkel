@@ -1,7 +1,10 @@
-e<?php
+<?php
     /*
         CAPACITACION FORM
     */
+    header('Content-Type: application/json');
+    require_once('_email.php');
+
     const SUCCESS_CODE = 200;
     const SUCCESS_MESSAGE = 'Hemos guardado tu datos, te enviaremos lo antes posible la información del curso.';
     const ERROR_CODE = 400;
@@ -87,23 +90,23 @@ e<?php
                     </div>
                 </body>
             </html>';
-    $headers[] = 'MIME-Version: 1.0';
-    $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-    $headers[] = 'From:'.$mail;
-    
-    // Mail it
-    // $envio = mail('contacto@frenkel.com.mx', $subject, $msg, implode("\r\n", $headers));
-    $envio = mail('elizabeth.ramescamilla@gmail.com', $subject, $msg, implode("\r\n", $headers));
-    
-    if($envio){
-        $returnV['error'] = false;
-        $returnV['message'] = SUCCESS_MESSAGE;
-    }
-    else{
-        $returnV['error'] = true;
-        $returnV['message'] = '';
-    }
 
-    header('Content-Type: application/json');
-    echo json_encode($returnV);
+    $to = 'elizabeth@studio-sub.com';
+    $cc = 'elizabeth.ramescamilla@gmail.com';
+
+    $email = new Email();
+    $email->setTo($to);
+    $email->setCC($cc);
+    $email->setFrom('noreplay@frenkel.com.mx');
+    $email->setFromName($name);
+    $email->setSubject($subject);
+    $email->setMessage($msg);
+  
+    $sendEmail = $email->sendEmail();
+    $message = $email->error_message; //si es TRUE el mensaje es 'EMAIL ENVIADO'
+    
+    $returnValue['return'] = $sendEmail;
+    $returnValue['message'] = $message;
+    echo json_encode($returnValue);
+    exit();
 ?>

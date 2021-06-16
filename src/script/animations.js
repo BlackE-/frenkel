@@ -7,7 +7,7 @@ import Capacitacion from './files/capacitacion.js';
 class Animations{
 	constructor(){}
 	index(){
-		new Index('.glide', 'https://www.studio-sub.com/clientes/frenkel/json/Frenkel-logo.json','linkTransitionBeneficios','linkTransitionServicios' );
+		new Index('.glide', 'https://frenkel.com.mx/assets/lottie/Frenkel-logo.json','linkTransitionBeneficios','linkTransitionServicios' );
 	}
 
 	beneficios(){
