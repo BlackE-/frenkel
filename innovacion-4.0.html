@@ -80,8 +80,9 @@
 </head>
 <body>
 	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFPQ9K7"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<noscript>
+		<iframe id="googletagamager" src="https://www.googletagmanager.com/ns.html?id=GTM-MFPQ9K7" height="0" width="0"></iframe>
+	</noscript>
 	<!-- End Google Tag Manager (noscript) -->
 	<div id="canvasBackground"><canvas id="paintonme"></canvas></div>
 	<header>
@@ -150,20 +151,31 @@
 						<div class="container">
 							<p class="title">Revise nuestros demos</p>
 							<div class="filesContainer">
-								<a href="#" target="_blank" data-router-disabled>
+								<a href="https://anonyred.herokuapp.com/ui/#!/0?socketid=cZtnByoNa5nDchG1AAAA" target="_blank" data-router-disabled>
 									<img src="src/assets/icons/FRK-demo-cerveza.svg" loading="lazy"/>
 									<p>“Control de tanques de cerveza”</p>
 								</a>
-								<a href="https://anonyred.herokuapp.com/ui/#!/0?socketid=cZtnByoNa5nDchG1AAAA" target="_blank" data-router-disabled>
+								<a class="openModal" href="#" target="_blank" data-router-disabled>
 									<img src="src/assets/icons/FRK-demo-azucar.svg" loading="lazy"/>
 									<p>“Control de silos de azucar”</p>
 								</a>
-								<a href="https://studio-sub.com/demos/SUBseller/" target="_blank" data-router-disabled>
-									<img src="src/assets/icons/FRK-demo-ecommerce.svg" loading="lazy"/>
+								<a href="https://studio-sub.com/demos/SUBseller/" target="_blank" id="subseller" data-router-disabled>
+									<img src="src/assets/icons/FRK-demo-ecommerce.png" loading="lazy"/>
 									<p>“E-commerce” <br><sub>(partnership con SUB)</sub></p>
 								</a>
 							</div>
 						</div>
+					</div>
+
+					<div id="youtubeLightBox" class="modal">
+					  <div class="modal-content">
+					    <span class="close" id="close">&times;</span>
+					    <video controls poster="src/assets/FRK-Thumbnail-web.jpg" 
+								src="https://frenkel.com.mx/assets/FRK-video-final.mp4">
+								    Sorry, your browser doesn't support embedded videos.
+								</video>
+					  </div>
+
 					</div>
 
 					<div class="downloadSection">

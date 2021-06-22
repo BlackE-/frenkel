@@ -1,5 +1,8 @@
 class Innovacion{
 	constructor(){
+		this.modal = document.getElementById('youtubeLightBox');
+		this.close = document.getElementById('close');
+		this.buttonsModal = [...document.getElementsByClassName('openModal')];
 		this.mailingForm = document.getElementById("mailingForm"); 
 		this.responseMailing = document.getElementById("responseMailing");
 		this.init();
@@ -7,6 +10,16 @@ class Innovacion{
 
 	validateEmail(email){return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);}
 	setMessageMailing(message){this.responseMailing.innerHTML = message;return}
+
+	setModal(){
+		this.buttonsModal.forEach((button)=>{button.addEventListener("click",(event)=>{event.preventDefault();document.getElementById('youtubeLightBox').classList.add('active');});});
+		this.close.addEventListener('click',()=>{this.closeModal();});
+		this.modal.addEventListener('click',()=>{this.closeModal();});
+	}
+
+	closeModal(){
+		this.modal.classList.remove('active');
+	}
 
 	submitMailingForm(){
 		this.setMessageMailing('');
@@ -54,6 +67,7 @@ class Innovacion{
 
 	init(){
 		this.setTimelines();
+		this.setModal();
 		this.mailingForm.addEventListener("submit", function(event){event.preventDefault();this.submitMailingForm();}.bind(this),false);
 	}
 }
