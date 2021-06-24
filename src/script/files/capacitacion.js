@@ -1,5 +1,6 @@
 class Capacitacion{
 	constructor(){
+		this.modal = document.getElementById('youtubeLightBox');
 		this.cursos = [...document.getElementsByClassName('inscribirse')];
 		this.capacitacionForm = document.getElementById('capacitacionForm');
 		this.cursos.forEach(function(item){
@@ -16,6 +17,9 @@ class Capacitacion{
 		this.setTimelines();
 		this.init();
 	}
+
+	openModal(){this.modal.classList.add('active');}
+	closeModal(){this.modal.classList.remove('active');}
 
 	setTimelines(){
 		let tl5 = gsap.timeline({scrollTrigger: {trigger: ".mailingSection",start: "top center"}});
@@ -38,15 +42,21 @@ class Capacitacion{
 		const response = document.getElementById('responseMailing');
 		const emailForm = this.mailingForm.elements['email'];
 		if(!this.validateEmail(emailForm.value)){this.setMessageMailing("Email inválido");return false;}
-		
+		this.openModal();
 		this.mailingForm.submit.disabled = false;
 		var xhttp = new XMLHttpRequest();
 	    xhttp.onreadystatechange = function() {
 	         if (this.readyState == 4 && this.status == 200) {
+	         	document.getElementById('youtubeLightBox').classList.remove('active');
+	         	// const res = JSON.parse(this.responseText);
+             	// console.log(res);
 	            response.innerHTML = `Hemos guardado tu información en nuestro mailing list`;	
 	            setTimeout(function(){response.innerHTML = '';this.mailingForm.reset();},3000);
 	         }
 	         if (this.readyState == 4 && this.status == 400) {
+	         	document.getElementById('youtubeLightBox').classList.remove('active');
+	         	// const res = JSON.parse(this.responseText);
+             	// console.log(res);
 	         	this.mailingForm.submit.disabled = true;
 	            response.innerHTML = `Ha ocurrido un error, intentarlo nuevamente.`;
 	         }
@@ -68,15 +78,21 @@ class Capacitacion{
 		if(!this.validateName(nameForm.value)){this.setMessageCapacitacion("Nombre inválido");return false;}
 		if(!this.validatePhone(phoneForm.value)){this.setMessageCapacitacion("Teléfono inválido");	return false;}
 		if(!this.validateCurso(cursoForm.value)){this.setMessageCapacitacion("Selecciona un curso");return false;}
-		
+		this.openModal();
 		this.capacitacionForm.submit.disabled = false;
 		var xhttp = new XMLHttpRequest();
          xhttp.onreadystatechange = function() {
              if (this.readyState == 4 && this.status == 200) {
+             	document.getElementById('youtubeLightBox').classList.remove('active');
+             	// const res = JSON.parse(this.responseText);
+             	// console.log(res);
                 response.innerHTML = `Gracias, hemos guardado tu datos, te enviaremos lo antes posible la información del curso`;	
                 setTimeout(function(){response.innerHTML = '';this.capacitacionForm.reset();},3000);
              }
              if (this.readyState == 4 && this.status == 400) {
+             	document.getElementById('youtubeLightBox').classList.remove('active');
+             	// const res = JSON.parse(this.responseText);
+             	// console.log(res);
              	this.capacitacionForm.submit.disabled = true;
                 response.innerHTML = errorMessage.message;
              }
